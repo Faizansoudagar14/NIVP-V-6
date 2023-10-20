@@ -1,0 +1,1760 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>NIVP V-6</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="bootstrap.min.js">
+    <link rel="stylesheet" type="text/css" href="validation.css">
+    <link rel="stylesheet" type="text/css" href="virtual-select.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+SC:wght@700&family=Lato:ital,wght@1,300&display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <link rel="icon" href="https://i.pinimg.com/originals/01/ca/da/01cada77a0a7d326d85b7969fe26a728.jpg">
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"> </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body style="background-color: rgb(154, 164, 223);color: black;margin: auto;">
+    <div id="valid">
+        <p>Please enter Your Id</p>
+        <input id="userId" name="userId" style='width:300px; margin-bottom: 10px;'
+            placeholder="Enter your id without @amazon.com"></input>
+        <br>
+        <input id="userPass" name="userPass" style='width:300px; margin-bottom: 10px;' type="password"
+            placeholder="Enter your password"></input>
+        <br>
+        <button id="vldU" onclick="vldU()" class="btn btn-primary">Ok</button>
+    </div>
+    <div class="container">
+        <nav class="navbar navbar-expand-lg" style="background-color: rgb(154, 164, 223);">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">NIVP</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <!-- <li class="nav-item">
+                            <a class="nav-link" href="Drk.html"><i class="fa fa-toggle-off" aria-hidden="true"></i></a>
+                        </li> -->
+                        <li class="nav-item">
+                            <a class="nav-link" href="VibeRules.html">Rules</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" target="_self" href="matchinghelp.html">Help</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" target="_blank" href="Reminder.html">Reminder</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" target="_blank"
+                                href="https://quip-amazon.com/Gjr7OJWJe3Ll/Tickets-Tracker">Tracker</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="http://cmt-tech-support.aka.corp.amazon.com:8181/STGuide/"
+                                target="_blank">Guide</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" onclick="themis();">Themis</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" onclick="mkplsearch();"><i class="fa fa-search"></i></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" onclick="pi();">PI</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" onclick="loginUser()"><i class="fa fa-sign-in"
+                                    aria-hidden="true"></i></a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                <i class="fa fa-link" aria-hidden="true"></i>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" onMouseOver="this.style.background='#198754'"
+                                        href="https://share.amazon.com/sites/nbbinternal_2019/Shared%20Documents/Forms/AllItems.aspx"
+                                        onMouseOut="this.style.background='#f9f9f9'" target="_blank">Internal Portal</a>
+                                </li>
+                                <li><a class="dropdown-item"
+                                        href="https://share.amazon.com/sites/nbbinternal_2019/_layouts/15/WopiFrame2.aspx?sourcedoc={32940267-AACA-4FC6-91AE-3B6676AB8219}&file=Disclaimer.xlsx&action=default"
+                                        onMouseOver="this.style.background='#198754'"
+                                        onMouseOut="this.style.background='#f9f9f9'" target="_blank">Disclaimer</a>
+                                </li>
+                                <li><a class="dropdown-item" href="#" onMouseOver="this.style.background='#198754'"
+                                        onMouseOut="this.style.background='#f9f9f9'" onclick="loginC()">Login Creds</a>
+                                </li>
+                                <li><a class="dropdown-item" href="#" onMouseOver="this.style.background='#198754'"
+                                        onMouseOut="this.style.background='#f9f9f9'" onclick="proxy()">Proxy</a>
+                                </li>
+                                <li><a class="dropdown-item" href="#" onMouseOver="this.style.background='#198754'"
+                                        onMouseOut="this.style.background='#f9f9f9'" onclick="edac()">EDAC</a>
+                                </li>
+                                <li><a class="dropdown-item" href="https://mytimeoff.corp.amazon.com/time_off"
+                                        target="_blank" onMouseOver="this.style.background='#198754'"
+                                        onMouseOut="this.style.background='#f9f9f9'">MyTime Off</a>
+                                </li>
+                                <li><a class="dropdown-item"
+                                        href="https://gcs-legacy-tools-iad.iad.proxy.amazon.com/glcatsubcatconfig"
+                                        target="_blank" onMouseOver="this.style.background='#198754'"
+                                        onMouseOut="this.style.background='#f9f9f9'">GCS Legacy Tools</a>
+                                </li>
+                                <li><a class="dropdown-item" href="#" onclick="idMMDD()"
+                                        onMouseOver="this.style.background='#198754'"
+                                        onMouseOut="this.style.background='#f9f9f9'">IDMMDD</a>
+                                </li>
+                                <li ><a class="dropdown-item" href="#" onclick="meetingID('mrg')"
+                                        onmouseover="this.style.background='#198754'"
+                                        onMouseOut="this.style.background='#f9f9f9'">Huddle Morning</a> 
+                                </li>
+
+                                <li ><a class="dropdown-item" href="#" onclick="meetingID('evn')"
+                                        onmouseover="this.style.background='#198754'"
+                                        onMouseOut="this.style.background='#f9f9f9'">Huddle Evening</a>
+                                </li>
+                                <li><a class="dropdown-item"
+                                        href="http://cmt-tech-support.aka.corp.amazon.com:8181/RegGenerator/index.jsp"
+                                        target="_blank" onMouseOver="this.style.background='#198754'"
+                                        onMouseOut="this.style.background='#f9f9f9'">RegGenerator</a>
+                                </li>
+                                <li><a class="dropdown-item"
+                                        href="https://share.amazon.com/sites/nbbproductivity/Lists/NBB%20Productivity%20New/AllItems.aspx"
+                                        target="_blank" onMouseOver="this.style.background='#198754'"
+                                        onMouseOut="this.style.background='#f9f9f9'">Prod</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                <i class="fa fa-wikipedia-w" aria-hidden="true"></i>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="https://w.amazon.com/bin/view/NBB_NPC_SOP/"
+                                        target="_blank" onMouseOver="this.style.background='#198754'"
+                                        onMouseOut="this.style.background='#f9f9f9'">NPC</a></li>
+                                <li><a class="dropdown-item" href="https://w.amazon.com/bin/view/Hulk_Project"
+                                        target="_blank" onMouseOver="this.style.background='#198754'"
+                                        onMouseOut="this.style.background='#f9f9f9'">Hulk</a></li>
+                                <li><a class="dropdown-item"
+                                        href="https://w.amazon.com/bin/view/Non-HULK_Multi-Buy_Logic" target="_blank"
+                                        onMouseOver="this.style.background='#198754'"
+                                        onMouseOut="this.style.background='#f9f9f9'">Non Hulk(EU Multibuy)</a></li>
+                                <li><a class="dropdown-item"
+                                        href="https://w.amazon.com/bin/view/Avista-Promo-Matching-SOP" target="_blank"
+                                        onMouseOver="this.style.background='#198754'"
+                                        onMouseOut="this.style.background='#f9f9f9'">Avista</a></li>
+                                <li><a class="dropdown-item"
+                                        href="https://w.amazon.com/bin/view/Avista-Promo-Matching-SOP/Avista_Strings/"
+                                        target="_blank" onMouseOver="this.style.background='#198754'"
+                                        onMouseOut="this.style.background='#f9f9f9'">BR MKPL Avista</a></li>
+                                <li><a class="dropdown-item" href="https://w.amazon.com/bin/view/Bundle_Promotion"
+                                        target="_blank" onMouseOver="this.style.background='#198754'"
+                                        onMouseOut="this.style.background='#f9f9f9'">US Bundle(Y type)</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                Mapping
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item"
+                                        href="https://cmt-map-sys-tools-eu.amazon.com/MappingStatus.jsp" target="_blank"
+                                        onMouseOver="this.style.background='#198754'"
+                                        onMouseOut="this.style.background='#f9f9f9'">EU</a></li>
+                                <li><a class="dropdown-item"
+                                        href="https://cmt-map-sys-tools-na.amazon.com/MappingStatus.jsp" target="_blank"
+                                        onMouseOver="this.style.background='#198754'"
+                                        onMouseOut="this.style.background='#f9f9f9'">NA</a></li>
+                                <li><a class="dropdown-item"
+                                        href="https://cmt-map-sys-tools-fe.pdx.amazon.com/MappingStatus.jsp"
+                                        target="_blank" onMouseOver="this.style.background='#198754'"
+                                        onMouseOut="this.style.background='#f9f9f9'">FE</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                <img src="tools.png" style="height: 20px;">
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item"
+                                        href="https://epi-myra-eu.aka.amazon.com/unified-promo-tool/#/allocations"
+                                        onMouseOver="this.style.background='#198754'"
+                                        onMouseOut="this.style.background='#f9f9f9'"
+                                        onclick="window.open('https://zeus-eu.aka.amazon.com/');" target="_blank">EU</a>
+                                </li>
+                                <li><a class="dropdown-item"
+                                        href="https://epi-myra-na.aka.amazon.com/unified-promo-tool/#/allocations"
+                                        onMouseOver="this.style.background='#198754'"
+                                        onMouseOut="this.style.background='#f9f9f9'"
+                                        onclick="window.open('https://zeus-na.aka.amazon.com/');" target="_blank">NA</a>
+                                </li>
+                                <li><a class="dropdown-item"
+                                        href="https://epi-myra-fe.aka.amazon.com/unified-promo-tool/#/allocations"
+                                        onMouseOver="this.style.background='#198754'"
+                                        onMouseOut="this.style.background='#f9f9f9'"
+                                        onclick="window.open('https://zeus-fe.aka.amazon.com/');" target="_blank">FE</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <button id="refreshButn" onclick="window.location.reload();" class="btn btn-warning btn-lg">
+        <i style="font-size:24px" class="fa">&#xf021;</i></button>
+    </div>
+    <h1>Welcome to NBB Internal Validation Page(V-6).</h1>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <p style="margin-bottom: 0px;">Paste GLs/Vibe's HTML/SIM Raw/ASIN here:</p>
+                <textarea id="interedGls" name="interedGls" rows="4" cols="50"
+                    placeholder="Paste GLs/Vibe's HTML/SIM Raw/ASIN here, don't paste g2s2 data here."></textarea>
+                <label for="Multiple Gls Select">Multiple GLs Select</label>
+                <select multiple name="native-select" placeholder="Select GLs" data-search="true"
+                    data-silent-initial-value-set="true" id="customGlsSelect" onclick="customGlsSelect()">
+                    <option value="gl_baby_product">gl_baby_product</option>
+                    <option value="gl_beauty">gl_beauty</option>
+                    <option value="gl_drugstore">gl_drugstore</option>
+                    <option value="gl_grocery">gl_grocery</option>
+                    <option value="gl_luxury_beauty">gl_luxury_beauty</option>
+                    <option value="gl_personal_care_appliances">gl_personal_care_appliances</option>
+                    <option value="gl_pet_products">gl_pet_products</option>
+                    <option value="gl_wine">gl_wine</option>
+                    <option value="gl_automotive">gl_automotive</option>
+                    <option value="gl_biss">gl_biss</option>
+                    <option value="gl_camera">gl_camera</option>
+                    <option value="gl_electronics">gl_electronics</option>
+                    <option value="gl_furniture">gl_furniture</option>
+                    <option value="gl_home">gl_home</option>
+                    <option value="gl_home_entertainment">gl_home_entertainment</option>
+                    <option value="gl_home_improvement">gl_home_improvement</option>
+                    <option value="gl_kitchen">gl_kitchen</option>
+                    <option value="gl_lawn_and_garden">gl_lawn_and_garden</option>
+                    <option value="gl_major_appliances">gl_major_appliances</option>
+                    <option value="gl_musical_instruments">gl_musical_instruments</option>
+                    <option value="gl_office_product">gl_office_product</option>
+                    <option value="gl_outdoors">gl_outdoors</option>
+                    <option value="gl_pc">gl_pc</option>
+                    <option value="gl_sports">gl_sports</option>
+                    <option value="gl_tires">gl_tires</option>
+                    <option value="gl_tools">gl_tools</option>
+                    <option value="gl_toy">gl_toy</option>
+                    <option value="gl_wireless">gl_wireless</option>
+                    <option value="gl_book">gl_book</option>
+                    <option value="gl_dvd">gl_dvd</option>
+                    <option value="gl_music">gl_music</option>
+                    <option value="gl_software">gl_software</option>
+                    <option value="gl_video_games">gl_video_games</option>
+                    <option value="gl_apparel">gl_apparel</option>
+                    <option value="gl_jewelry">gl_jewelry</option>
+                    <option value="gl_luggage">gl_luggage</option>
+                    <option value="gl_shoes">gl_shoes</option>
+                    <option value="gl_watch">gl_watch</option>
+                    <option value="#" disabled>Below are Non-core GLs</option>
+                    <option value="gl_digital_accessories">gl_digital_accessories</option>
+                    <option value="gl_digital_accessories_2">gl_digital_accessories_2</option>
+                    <option value="gl_digital_devices_4">gl_digital_devices_4</option>
+                    <option value="gl_digital_products_22_accessory">gl_digital_products_22_accessory</option>
+                    <option value="gl_digital_products_26_accessory">gl_digital_products_26_accessory</option>
+                    <option value="gl_digital_products_3">gl_digital_products_3</option>
+                    <option value="gl_digital_products_3_accessory">gl_digital_products_3_accessory</option>
+                    <option value="gl_digital_products_9_accessory">gl_digital_products_9_accessory</option>
+                    <option value="gl_digital_software">gl_digital_software</option>
+                    <option value="gl_digital_text">gl_digital_text</option>
+                    <option value="gl_digital_text_2">gl_digital_text_2</option>
+                    <option value="gl_digital_video_games">gl_digital_video_games</option>
+                    <option value="gl_fresh_ambient">gl_fresh_ambient</option>
+                    <option value="gl_fresh_perishable">gl_fresh_perishable</option>
+                    <option value="gl_fresh_prepared">gl_fresh_prepared</option>
+                    <option value="gl_fresh_produce">gl_fresh_produce</option>
+                    <option value="gl_mobile_electronics">gl_mobile_electronics</option>
+                    <option value="gl_pantry">gl_pantry</option>
+                    <option value="gl_softlines_private_label">gl_softlines_private_label</option>
+                    <option value="gl_vdo_devices">gl_vdo_devices</option>
+                </select>
+            </div>
+            <div class="col">
+                <label for="enteredMkpl">Select MKPL</label>
+                <select class="form-control" name="enteredMkpl" id="enteredMkpl">
+                    <option value="ae">AE</option>
+                    <option value="au">AU</option>
+                    <option value="be">BE</option>
+                    <option value="br">BR</option>
+                    <option value="ca" style="color: red; font-weight: 700;">CA</option>
+                    <option value="de">DE</option>
+                    <option value="eg">EG</option>
+                    <option value="es">ES</option>
+                    <option value="fr">FR</option>
+                    <option value="in">IN</option>
+                    <option value="it">IT</option>
+                    <option value="jp" style="color:#e31b5c; font-weight: 700;">JP</option>
+                    <option value="sa">KSA/SA</option>
+                    <option value="mx">MX</option>
+                    <option value="nl">NL</option>
+                    <option value="pl">PL</option>
+                    <option value="se">SE</option>
+                    <option value="sg">SG/Durian</option>
+                    <option value="tr" style="color:#e31b5c; font-weight: 700;">TR</option>
+                    <option value="uk">UK/GB</option>
+                    <option value="us">US</option>
+                </select>
+                <button id="g2s2Table" onclick="openNBBSOP()" class="btn btn-primary" target="_blank">SOP</button>
+                <button id="btnPrompt" class="btn btn-primary" onclick="window.open( 'FAQ.html', '_self' )"
+                    style="margin-top: 8px ;width: 90px;">FAQ</button>
+            </div>
+            <div class="col">
+                <label for="enteredCompName">Select Competitor Name</label>
+                <select class="form-control" name="enteredCompName" id="enteredCompName">
+                    <option value="ae">ACE-AE</option>
+                    <option value="ae">Carrefour-AE</option>
+                    <option value="ae">Delsey-AE</option>
+                    <option value="ae">DubaiPetfood-AE</option>
+                    <option value="ae">Gant-AE</option>
+                    <option value="ae">Homesrus-AE</option>
+                    <option value="ae">Lulu-AE</option>
+                    <option value="ae">Motorola-AE</option>
+                    <option value="ae">Mumzworld-AE</option>
+                    <option value="ae">Namshi-AE</option>
+                    <option value="ae">Noon-AE(MKPL Comp)</option>
+                    <option value="ae">Noon-AE-MKPL</option>
+                    <option value="ae">Noon-AE-Now-MKPL</option>
+                    <option value="ae">Noondaily-AE</option>
+                    <option value="ae">Puma-AE</option>
+                    <option value="ae">Samsung-AE</option>
+                    <option value="ae">Sephora-AE</option>
+                    <option value="ae">Sharafdg-AE</option>
+                    <option value="ae">Sivvi-AE</option>
+                    <option value="ae">Sporter-AE</option>
+                    <option value="ae">SunSand-AE</option>
+                    <option value="ae">Watches-AE</option>
+                    <option value="au">Adidas-AU</option>
+                    <option value="au">Adorebeauty-AU</option>
+                    <option value="au">Anaconda-AU</option>
+                    <option value="au">ApplianceOnline-AU</option>
+                    <option value="au">Autobarn-AU</option>
+                    <option value="au">Automotivesuperstore-AU</option>
+                    <option value="au">Babybunting-AU</option>
+                    <option value="au">BabyKingdom-AU</option>
+                    <option value="au">BabyVillage-AU</option>
+                    <option value="au">BagstoGo-AU</option>
+                    <option value="au">BCF</option>
+                    <option value="au">BigW-AU</option>
+                    <option value="au">BingLee-AU</option>
+                    <option value="au">BONDS-AU</option>
+                    <option value="au">Booktopia-AU</option>
+                    <option value="au">BudgetPetProduct-AU</option>
+                    <option value="au">BWS-AU</option>
+                    <option value="au">Catch of the Day</option>
+                    <option value="au">Costco-AU</option>
+                    <option value="au">Cottonon-AU</option>
+                    <option value="au">DavidJones-AU</option>
+                    <option value="au">DELL-AU</option>
+                    <option value="au">Dick Smith-AU</option>
+                    <option value="au">Digidirect-AU</option>
+                    <option value="au">Dymocks-AU</option>
+                    <option value="au">Ebay-AU(MKPL Comp)</option>
+                    <option value="au">Ebay-AU-MKPL</option>
+                    <option value="au">FootLocker-AU</option>
+                    <option value="au">Gameology-AU</option>
+                    <option value="au">HarrisFarm-AU</option>
+                    <option value="au">Harrisscarfe-AU</option>
+                    <option value="au">HarveyNorman-AU</option>
+                    <option value="au">House-AU</option>
+                    <option value="au">HypeDC-AU</option>
+                    <option value="au">JBHi-Fi-AU</option>
+                    <option value="au">Kentstreetcellars-AU</option>
+                    <option value="au">KitchenWarehouse-AU</option>
+                    <option value="au">Kogan-AU</option>
+                    <option value="au">Lego-AU</option>
+                    <option value="au">Liquorland-AU</option>
+                    <option value="au">Mobileciti-AU</option>
+                    <option value="au" style="color:#e31b5c; font-weight: 700;">Mwave-AU</option>
+                    <option value="au" style="color:#e31b5c; font-weight: 700">mydeal.com</option>
+                    <option value="au" style="color:#e31b5c; font-weight: 700;">Myer-AU</option>
+                    <option value="au">Mypetwarehouse-AU</option>
+                    <option value="au">Nike-AU</option>
+                    <option value="au">Novoshoes-AU</option>
+                    <option value="au">OzHairAndBeauty-AU</option>
+                    <option value="au">PetBarn-AU</option>
+                    <option value="au">PetCircle-AU</option>
+                    <option value="au">Petstock-AU</option>
+                    <option value="au">Priceline-AU</option>
+                    <option value="au">Rebel Sport</option>
+                    <option value="au">Repco-AU</option>
+                    <option value="au">Sanity-AU</option>
+                    <option value="au">Sephora-AU</option>
+                    <option value="au">Skechers-AU</option>
+                    <option value="au">Sony-AU</option>
+                    <option value="au">StoreDJ-AU</option>
+                    <option value="au">Styletread-AU</option>
+                    <option value="au">SuperCheapAuto-AU</option>
+                    <option value="au">Superpharmacy-AU</option>
+                    <option value="au">SydneyTools-AU</option>
+                    <option value="au">Target-AU</option>
+                    <option value="au">Teds Cameras</option>
+                    <option value="au">TempleandWebster-AU</option>
+                    <option value="au">Tentworld-AU</option>
+                    <option value="au">The Iconic</option>
+                    <option value="au">TheGamesmen-AU</option>
+                    <option value="au">TheGoodGuys-AU</option>
+                    <option value="au">Thevetshed-AU</option>
+                    <option value="au">TotalTools-AU</option>
+                    <option value="au">Toyworld-AU</option>
+                    <option value="au">Vintagecellars-AU</option>
+                    <option value="au">Woolworths-AU</option>
+                    <option value="be">Ah-BE</option>
+                    <option value="be">Alternate-BE</option>
+                    <option value="be">BOL-BE</option>
+                    <option value="be">Brico-BE </option>
+                    <option value="be">Colruyt-BE</option>
+                    <option value="be">Conrad-BE</option>
+                    <option value="be">Coolblue-BE</option>
+                    <option value="be">Delhaize-BE</option>
+                    <option value="be">Farmaline-BE </option>
+                    <option value="be">Fnac-BE</option>
+                    <option value="be">Krefel-BE</option>
+                    <option value="be">Kruidvat-BE</option>
+                    <option value="be">Mediamarkt-BE</option>
+                    <option value="be">Tandenborstel-BE</option>
+                    <option value="be">Vandenborre-BE</option>
+                    <option value="be">Zalando-BE</option>
+                    <option value="br">Alobebe-BR</option>
+                    <option value="br">Americanas-BR(MKPL Comp)</option>
+                    <option value="br">Americanas-BR-MKPL</option>
+                    <option value="br">Apple -BR</option>
+                    <option value="br">BelezanaWeb-BR</option>
+                    <option value="br">Carrefour-BR</option>
+                    <option value="br">Centauro-BR</option>
+                    <option value="br">Cobasi-BR</option>
+                    <option value="br">Dafiti-BR</option>
+                    <option value="br" style="color:#e31b5c; font-weight: 700;">DrogaRaia-BR</option>
+                    <option value="br">DrogariaSaoPaulo-BR</option>
+                    <option value="br">Drogasil-BR</option>
+                    <option value="br">DutraMaquinas-BR</option>
+                    <option value="br">Havaianas-BR</option>
+                    <option value="br">Kabum-BR</option>
+                    <option value="br">MagazineLuiza-BR(MKPL Comp)</option>
+                    <option value="br">MagazineLuiza-BR-MKPL</option>
+                    <option value="br">Mercadolivre-BR</option>
+                    <option value="br">Netshoes</option>
+                    <option value="br">PagueMenos-BR</option>
+                    <option value="br">PalaciodasFerramentas-BR</option>
+                    <option value="br">Panvel-BR</option>
+                    <option value="br">PaoDeAcucar-BR</option>
+                    <option value="br">PetLove-BR</option>
+                    <option value="br">Petz-BR</option>
+                    <option value="br">PontoFrio-BR</option>
+                    <option value="br">Sephora-BR</option>
+                    <option value="br">Shoptime-BR</option>
+                    <option value="br">Submarino-BR(MKPL Comp)</option>
+                    <option value="br">Submarino-BR-MKPL</option>
+                    <option value="br">TelhaNorte-BR</option>
+                    <option value="ca">Adidas-CA</option>
+                    <option value="ca">AldoShoes-CA</option>
+                    <option value="ca">Altitude-Sports-CA</option>
+                    <option value="ca">ASOS-CA</option>
+                    <option value="ca">BabiesRUs-CA</option>
+                    <option value="ca">BestBuy-CA(MKPL Comp)</option>
+                    <option value="ca">BestBuy-CA-MKPL</option>
+                    <option value="ca">BigAlsPets-CA</option>
+                    <option value="ca">Bose-CA</option>
+                    <option value="ca">CallitSpring-CA</option>
+                    <option value="ca">CanadaComputers</option>
+                    <option value="ca">CanadianLuggageDepot-CA</option>
+                    <option value="ca">CanadianTire</option>
+                    <option value="ca">Carter's-CA</option>
+                    <option value="ca">Chapters</option>
+                    <option value="ca">Clarks-CA</option>
+                    <option value="ca">Costco-CA</option>
+                    <option value="ca">Crocs-CA</option>
+                    <option value="ca">Dell-CA</option>
+                    <option value="ca">Dickies CA</option>
+                    <option value="ca">Disney</option>
+                    <option value="ca">DSW CA</option>
+                    <option value="ca">DTC-Gap-CA</option>
+                    <option value="ca">Ebay-CA</option>
+                    <option value="ca">Footlocker-CA</option>
+                    <option value="ca">FortNine-CA</option>
+                    <option value="ca">Fossil-CA</option>
+                    <option value="ca">GarminCanada-CA</option>
+                    <option value="ca">Homedepot-CA</option>
+                    <option value="ca">HomesAlive-CA</option>
+                    <option value="ca">IHLcanada-CA</option>
+                    <option value="ca">IKEA</option>
+                    <option value="ca">Jeancoutu-CA</option>
+                    <option value="ca">JYSK</option>
+                    <option value="ca">Kitchenstuffplus-CA</option>
+                    <option value="ca">Laroche-posay-CA</option>
+                    <option value="ca">Lego-CA</option>
+                    <option value="ca">London Drugs</option>
+                    <option value="ca">Lowes-CA</option>
+                    <option value="ca">Marks-CA</option>
+                    <option value="ca">Mastermind-CA</option>
+                    <option value="ca">Metro-CA</option>
+                    <option value="ca">Mondou-CA</option>
+                    <option value="ca">Napa Canada</option>
+                    <option value="ca" style="color:#e31b5c; font-weight: 700;">Newegg-CA</option>
+                    <option value="ca">NoFrills-CA</option>
+                    <option value="ca">Petland-CA</option>
+                    <option value="ca">PetOnly-CA</option>
+                    <option value="ca">PetSmart-CA</option>
+                    <option value="ca">realcanadiansuperstore-CA</option>
+                    <option value="ca">Renspets-CA</option>
+                    <option value="ca">Rona</option>
+                    <option value="ca">Sephora-CA</option>
+                    <option value="ca">ShoppersDrugmart-CA</option>
+                    <option value="ca">Simons</option>
+                    <option value="ca">Softmoc-CA</option>
+                    <option value="ca">SportChek-CA</option>
+                    <option value="ca">Sportinglife-CA</option>
+                    <option value="ca">Staples</option>
+                    <option value="ca">TheBay</option>
+                    <option value="ca">TheChildrensPlace</option>
+                    <option value="ca">TheShoeCompany-CA</option>
+                    <option value="ca">Toys R Us-CA</option>
+                    <option value="ca">UnderArmour-CA</option>
+                    <option value="ca">vitasave.ca</option>
+                    <option value="ca">Voila-CA</option>
+                    <option value="ca" style="color:#e31b5c; font-weight: 700;">Walmart-CA-Grocery</option>
+                    <option value="ca" style="color:#e31b5c; font-weight: 700;">Walmart-CA-Online(MKPL Comp)</option>
+                    <option value="ca">Walmart-CA-MKPL</option>
+                    <option value="ca">Wayfair-Canada</option>
+                    <option value="ca">Well-CA</option>
+                    <option value="ca">Westcoastkids-CA</option>
+                    <option value="ca">Wholesaleclub-CA</option>
+                    <option value="de">Adidas-DE</option>
+                    <option value="de">Aldi_Nord-DE</option>
+                    <option value="de">Aldionlineshop-DE</option>
+                    <option value="de">Alternate</option>
+                    <option value="de">Ankerkraut-DE</option>
+                    <option value="de">Apodiscounter-DE</option>
+                    <option value="de">Asos-DE</option>
+                    <option value="de">BabyOne-DE</option>
+                    <option value="de">Beamershop24</option>
+                    <option value="de">Bergfreunde-DE</option>
+                    <option value="de">Bergzeit</option>
+                    <option value="de">Bike24</option>
+                    <option value="de">Bitiba-DE</option>
+                    <option value="de">Bonprix-DE</option>
+                    <option value="de">Breuninger-DE</option>
+                    <option value="de">Brille24-DE</option>
+                    <option value="de">bulkpowders-DE</option>
+                    <option value="de">C&A-DE</option>
+                    <option value="de">Christ</option>
+                    <option value="de">Conrad</option>
+                    <option value="de">Coolblue-DE</option>
+                    <option value="de">Crocs-DE</option>
+                    <option value="de">Cyberport</option>
+                    <option value="de">De Tommy</option>
+                    <option value="de">Dehner-DE</option>
+                    <option value="de">Deichmann-DE</option>
+                    <option value="de">DM-DE</option>
+                    <option value="de">Docmorris</option>
+                    <option value="de">Douglas</option>
+                    <option value="de">DTC-Braun-DE</option>
+                    <option value="de">DTC-PONS-DE</option>
+                    <option value="de">Ebay-DE</option>
+                    <option value="de">Emp-online-DE</option>
+                    <option value="de">Euronics-DE</option>
+                    <option value="de">Expert-DE</option>
+                    <option value="de">Fahrrad</option>
+                    <option value="de">Fahrrad-XXL-DE</option>
+                    <option value="de">FCMoto-DE</option>
+                    <option value="de">Fitbit-DE</option>
+                    <option value="de">Fitmart-DE</option>
+                    <option value="de">Flaconi.de</option>
+                    <option value="de">Fossil</option>
+                    <option value="de">Fressnapf</option>
+                    <option value="de">Galaxus-DE</option>
+                    <option value="de">Galeria Kaufhof</option>
+                    <option value="de">Geox-DE</option>
+                    <option value="de">Globetrotter</option>
+                    <option value="de">Gravis-DE</option>
+                    <option value="de">G-Star-DE</option>
+                    <option value="de">H&M-DE</option>
+                    <option value="de">HageBau</option>
+                    <option value="de">Hagelshop</option>
+                    <option value="de">Home24</option>
+                    <option value="de">Hornbach-DE</option>
+                    <option value="de">HP-DE</option>
+                    <option value="de">Hugendubel</option>
+                    <option value="de">Intersport-DE</option>
+                    <option value="de">JackWolfskin-DE</option>
+                    <option value="de">jpc</option>
+                    <option value="de">Kaufland-Stores-DE</option>
+                    <option value="de">Lacoste-DE</option>
+                    <option value="de">Lego-DE</option>
+                    <option value="de">Levis-DE</option>
+                    <option value="de">Lidl-DE</option>
+                    <option value="de">Lindt-DE</option>
+                    <option value="de">Linsensuppe-DE</option>
+                    <option value="de">Louis.de</option>
+                    <option value="de">Media Markt</option>
+                    <option value="de">MedikamentePerKlick-DE</option>
+                    <option value="de">Medpex-DE</option>
+                    <option value="de">Metro-DE</option>
+                    <option value="de" style="color:#e31b5c; font-weight: 700;">Mirapodo</option>
+                    <option value="de">Mueller-DE</option>
+                    <option value="de">Mytime.de</option>
+                    <option value="de" style="color:#e31b5c; font-weight: 700;">MyToys</option>
+                    <option value="de">Netto-DE</option>
+                    <option value="de">Nike-DE</option>
+                    <option value="de">Notebooksbilliger</option>
+                    <option value="de">Notino-DE</option>
+                    <option value="de">OBI-DE</option>
+                    <option value="de">Otto</option>
+                    <option value="de">PandoraStore</option>
+                    <option value="de">ParfumdreamsDE</option>
+                    <option value="de">Philips-DE</option>
+                    <option value="de">Puma</option>
+                    <option value="de">Real-onlineshop(MKPL Comp)</option>
+                    <option value="de">Real-onlineshop-MKPL</option>
+                    <option value="de">Reuter-Badshop</option>
+                    <option value="de">Rewe-express(MKPL Comp)</option>
+                    <option value="de">Rewe-express-MKPL</option>
+                    <option value="de">Rituals-DE</option>
+                    <option value="de">Roller-DE</option>
+                    <option value="de">Rossman</option>
+                    <option value="de">Samsung-DE</option>
+                    <option value="de">Saturn</option>
+                    <option value="de">Schiesser-DE</option>
+                    <option value="de">Schuhe-DE</option>
+                    <option value="de">Shein-DE</option>
+                    <option value="de">ShopKaufland-DE</option>
+                    <option value="de">Smyths-DE</option>
+                    <option value="de">Spartoo-DE</option>
+                    <option value="de">SportsCheck</option>
+                    <option value="de">Street_one_DE</option>
+                    <option value="de">Tamaris-DE</option>
+                    <option value="de">Tchibo-DE</option>
+                    <option value="de">Telekom-DE</option>
+                    <option value="de" style="color:#e31b5c; font-weight: 700;">Thalia</option>
+                    <option value="de">ThomasSabo-DE</option>
+                    <option value="de">Timeshop24-DE</option>
+                    <option value="de">Tom Tailor-DE</option>
+                    <option value="de">Toom-DE</option>
+                    <option value="de">Trigema-DE</option>
+                    <option value="de">Triumph-DE</option>
+                    <option value="de">Vangraaf-DE</option>
+                    <option value="de">Wardow-DE</option>
+                    <option value="de">Watchshop-DE</option>
+                    <option value="de">Wayfair-DE</option>
+                    <option value="de">Windeln</option>
+                    <option value="de">Witt-Weiden-DE</option>
+                    <option value="de">XXX Lutz</option>
+                    <option value="de">Zalando</option>
+                    <option value="de">Zoo24</option>
+                    <option value="de">zooplus</option>
+                    <option value="eg">Carrefour-EG</option>
+                    <option value="eg">Jumia-EG</option>
+                    <option value="eg">Noon-EG</option>
+                    <option value="es">Adidas-ES</option>
+                    <option value="es" style="color:#e31b5c; font-weight: 700;">Alcampo_ES</option>
+                    <option value="es">Alfasoni-ES</option>
+                    <option value="es">Aliexpress-ES(MKPL Comp)</option>
+                    <option value="es">Aliexpress-ES-MKPL</option>
+                    <option value="es">Asos-ES</option>
+                    <option value="es">Barakaldotiendaveterinaria-ES</option>
+                    <option value="es">Benetton-ES</option>
+                    <option value="es">Bikeinn-ES</option>
+                    <option value="es">Bosch-ES</option>
+                    <option value="es">Campoulzenoteca-ES</option>
+                    <option value="es">Carrefour-ES(MKPL Comp)</option>
+                    <option value="es">Carrefour-ES-MKPL</option>
+                    <option value="es">Carrefour-Supermercado-ES</option>
+                    <option value="es">Conforama-ES</option>
+                    <option value="es">Cortefiel-ES</option>
+                    <option value="es">CriOh-ES</option>
+                    <option value="es">Decantalo-ES</option>
+                    <option value="es">Decathlon-ES</option>
+                    <option value="es">Dia-ES</option>
+                    <option value="es">Dosfarma-ES</option>
+                    <option value="es">Douglas-ES</option>
+                    <option value="es">Druni-ES</option>
+                    <option value="es">Dvdstorespain-ES</option>
+                    <option value="es">Eastpack</option>
+                    <option value="es">Ebay-ES</option>
+                    <option value="es">Elcorteingles-ES(MKPL Comp)</option>
+                    <option value="es">Elcorteingles-ES-MKPL</option>
+                    <option value="es">Elcorteingles-ES-Supermercado</option>
+                    <option value="es">Elcorteingles-Gourmet-ES</option>
+                    <option value="es">Elcorteingles-Mascotas-ES</option>
+                    <option value="es">Feuvert-ES</option>
+                    <option value="es">Fnac-ES(MKPL Comp)</option>
+                    <option value="es">FNAC-ES-MKPL</option>
+                    <option value="es">Forum-ES</option>
+                    <option value="es">Fotografiarte-ES</option>
+                    <option value="es">Geox-ES</option>
+                    <option value="es">GoalInn-ES</option>
+                    <option value="es">GStar-ES</option>
+                    <option value="es">Guess-ES</option>
+                    <option value="es">Havainas-ES</option>
+                    <option value="es">Hawkers-ES</option>
+                    <option value="es">Hipercor-ES</option>
+                    <option value="es">Hipercor-ES-Supermercado</option>
+                    <option value="es">Hsnstore-ES</option>
+                    <option value="es">IKEA-ES</option>
+                    <option value="es">JDsports-ES</option>
+                    <option value="es">Kiabi</option>
+                    <option value="es">Kiwoko-ES</option>
+                    <option value="es">LaRedoute-ES</option>
+                    <option value="es">Lego-ES</option>
+                    <option value="es">Levi-ES</option>
+                    <option value="es">MadridHiFi</option>
+                    <option value="es">Mayoral-ES</option>
+                    <option value="es">Mediamarkt-ES</option>
+                    <option value="es">Mercadona-Madrid-ES</option>
+                    <option value="es">Mielectro-ES</option>
+                    <option value="es">MiFarma-ES</option>
+                    <option value="es">Miravia-ES</option>
+                    <option value="es">Mister-Auto-ES</option>
+                    <option value="es">Motoblouz-ES</option>
+                    <option value="es">Myprotein-ES</option>
+                    <option value="es">MySpringField-ES</option>
+                    <option value="es">Naturitas-ES</option>
+                    <option value="es">Nespresso-ES</option>
+                    <option value="es">Nike-ES</option>
+                    <option value="es">Norauto-ES</option>
+                    <option value="es">Notino-ES</option>
+                    <option value="es">Nutritienda-ES</option>
+                    <option value="es">Oscaro-ES</option>
+                    <option value="es">Pablosky-ES</option>
+                    <option value="es">Pandora-ES</option>
+                    <option value="es">Pccomponentes-ES(MKPL Comp)</option>
+                    <option value="es">Pccomponentes-ES-MKPL</option>
+                    <option value="es">PedrodelHierro-ES</option>
+                    <option value="es">Pikolinos-ES</option>
+                    <option value="es">Planetahuerto-ES</option>
+                    <option value="es">Playmobil-ES</option>
+                    <option value="es">Primor-ES</option>
+                    <option value="es">PromoFarma-ES</option>
+                    <option value="es">Prozis-ES</option>
+                    <option value="es">Puma-ES</option>
+                    <option value="es">Reebok-ES</option>
+                    <option value="es">Rosaoazul-ES</option>
+                    <option value="es">RunnerInn-ES</option>
+                    <option value="es">Salomon-ES</option>
+                    <option value="es">Samsung-ES</option>
+                    <option value="es">Sarenza-ES</option>
+                    <option value="es">Sephora-ES</option>
+                    <option value="es">Shein-ES</option>
+                    <option value="es">ShopDisney-ES</option>
+                    <option value="es">Skechers-ES</option>
+                    <option value="es">SmashInn-ES</option>
+                    <option value="es">Snowinn-ES</option>
+                    <option value="es">Spartoo-ES</option>
+                    <option value="es">Swiminn-ES</option>
+                    <option value="es">TodoRelojes-ES</option>
+                    <option value="es">Tous-ES</option>
+                    <option value="es">Toysrus-ES</option>
+                    <option value="es">Traininn-ES</option>
+                    <option value="es">Tutete-ES</option>
+                    <option value="es">Vans-ES</option>
+                    <option value="es">Venca-ES</option>
+                    <option value="es">Waveinn-ES</option>
+                    <option value="es">Westwingnow-ES</option>
+                    <option value="es">WomenSecret_ES</option>
+                    <option value="es">Worten-ES</option>
+                    <option value="es">Zalando-ES</option>
+                    <option value="es">Zooplus-ES</option>
+                    <option value="fr">Allobebe</option>
+                    <option value="fr">Allopneus-FR</option>
+                    <option value="fr">Asos-FR</option>
+                    <option value="fr">Aubert-FR</option>
+                    <option value="fr">Auchan</option>
+                    <option value="fr">Auchandirect</option>
+                    <option value="fr">Auto-leclerc-FR</option>
+                    <option value="fr">Azialo-FR</option>
+                    <option value="fr">Bebe9-FR</option>
+                    <option value="fr">Bijourama-FR</option>
+                    <option value="fr">BlanchePorte-FR</option>
+                    <option value="fr">Bonobo-Fr</option>
+                    <option value="fr">BonPrix-FR</option>
+                    <option value="fr">Boohoo-FR</option>
+                    <option value="fr">Bosch-FR</option>
+                    <option value="fr">Boulanger</option>
+                    <option value="fr">BricoDepot-FR</option>
+                    <option value="fr">Bricomarche</option>
+                    <option value="fr">Bureau-vallee</option>
+                    <option value="fr">But-FR</option>
+                    <option value="fr">CacheCache-FR</option>
+                    <option value="fr">Camif-FR</option>
+                    <option value="fr">CarrefourDrive-FR</option>
+                    <option value="fr">Castorama</option>
+                    <option value="fr">Cdiscount(MKPL Comp)</option>
+                    <option value="fr">Cdiscount-MKPL</option>
+                    <option value="fr">CDiscount Pro</option>
+                    <option value="fr">CELIO-FR</option>
+                    <option value="fr">Chaussures-FR</option>
+                    <option value="fr">ChicTime-FR</option>
+                    <option value="fr">ChristianDior-FR</option>
+                    <option value="fr">Conforama</option>
+                    <option value="fr">Crocs-FR</option>
+                    <option value="fr">Cultura</option>
+                    <option value="fr">Darty(MKPL Comp)</option>
+                    <option value="fr">Darty-MKPL</option>
+                    <option value="fr">Debonix-Cdiscount-FR</option>
+                    <option value="fr">Decitre-FR</option>
+                    <option value="fr">DELL-FR</option>
+                    <option value="fr">Dim-FR</option>
+                    <option value="fr">Dressinn-FR</option>
+                    <option value="fr">E.Leclerc-FR</option>
+                    <option value="fr">Eastpak-FR</option>
+                    <option value="fr">Easyparapharmacie-FR</option>
+                    <option value="fr">Ebay-FR</option>
+                    <option value="fr">Electrodepot-FR</option>
+                    <option value="fr">Esprit-FR</option>
+                    <option value="fr">Faber-Castell-FR</option>
+                    <option value="fr">FisherScientific-FR</option>
+                    <option value="fr">Fnac(MKPL Comp)</option>
+                    <option value="fr">Fnac-MKPL</option>
+                    <option value="fr">Fnac-SpecialEditions</option>
+                    <option value="fr">FnacTrade</option>
+                    <option value="fr">Fossil-FR</option>
+                    <option value="fr">Free-FR</option>
+                    <option value="fr">Galerieslafayette</option>
+                    <option value="fr">Gammvert-FR</option>
+                    <option value="fr">Gibertjoseph.com</option>
+                    <option value="fr">Go-sport</option>
+                    <option value="fr">Histoiredor</option>
+                    <option value="fr">HPStore-FR</option>
+                    <option value="fr">Idkids-FR</option>
+                    <option value="fr">Intersport</option>
+                    <option value="fr">JD-Sports-FR</option>
+                    <option value="fr">Jennyfer-FR</option>
+                    <option value="fr">Joueclub</option>
+                    <option value="fr">Kaporal</option>
+                    <option value="fr">King-Jouet</option>
+                    <option value="fr">La-becanerie-FR</option>
+                    <option value="fr">Lacoste-FR</option>
+                    <option value="fr">LaGrandeRecre</option>
+                    <option value="fr">Laredoute</option>
+                    <option value="fr">LDLC</option>
+                    <option value="fr">Le Pape</option>
+                    <option value="fr">Leclerc-Drive</option>
+                    <option value="fr">Lee</option>
+                    <option value="fr">Leroymerlin</option>
+                    <option value="fr">Levi-FR</option>
+                    <option value="fr">LOrealParis-FR</option>
+                    <option value="fr">Maisonetloisirs-leclerc-FR</option>
+                    <option value="fr">Marionnaud-FR</option>
+                    <option value="fr">Materiel</option>
+                    <option value="fr">Mathon-FR</option>
+                    <option value="fr">maxicoffee-FR</option>
+                    <option value="fr">Menzzo-FR</option>
+                    <option value="fr">Mesbagages-FR</option>
+                    <option value="fr">Micromania</option>
+                    <option value="fr">Mister-Auto</option>
+                    <option value="fr">Monoprix-FR</option>
+                    <option value="fr">Motoblouz</option>
+                    <option value="fr">Nike-FR</option>
+                    <option value="fr" style="color:#e31b5c; font-weight: 700;">Nocibe-FR</option>
+                    <option value="fr">Norauto</option>
+                    <option value="fr">Ocarat-FR</option>
+                    <option value="fr">Ooshop-FR</option>
+                    <option value="fr">OptiqueLeclerc-FR</option>
+                    <option value="fr">Orange-FR</option>
+                    <option value="fr">Pandora-FR</option>
+                    <option value="fr">Petit-Bateau</option>
+                    <option value="fr">Philibert-FR</option>
+                    <option value="fr">Philips-FR</option>
+                    <option value="fr">Picwictoys-FR</option>
+                    <option value="fr">Pimkie-FR</option>
+                    <option value="fr">Placedestendances-FR</option>
+                    <option value="fr">Quiksilver</option>
+                    <option value="fr">Roseoubleu-FR</option>
+                    <option value="fr">RougierPle-FR</option>
+                    <option value="fr">Samsonite-FR</option>
+                    <option value="fr">Samsung-FR</option>
+                    <option value="fr">Santediscount-FR</option>
+                    <option value="fr">Sarenza</option>
+                    <option value="fr">Sephora</option>
+                    <option value="fr">Shopdisney-FR</option>
+                    <option value="fr">SmashInn-FR</option>
+                    <option value="fr">Snowinn-FR</option>
+                    <option value="fr">Snowleader-FR</option>
+                    <option value="fr">SonVideo-FR</option>
+                    <option value="fr">Spartoo</option>
+                    <option value="fr">Systeme U drive</option>
+                    <option value="fr">Ubaldi</option>
+                    <option value="fr">UnderArmour-FR</option>
+                    <option value="fr">Uniqlo-FR</option>
+                    <option value="fr">Vertbaudet</option>
+                    <option value="fr">Vidaxl-FR</option>
+                    <option value="fr">Wanimo</option>
+                    <option value="fr">Waveinn-FR</option>
+                    <option value="fr">Xtremeinn-FR</option>
+                    <option value="fr">Zalando-FR</option>
+                    <option value="fr">Zoomalia-FR</option>
+                    <option value="in">Ajio-IN</option>
+                    <option value="in">Apple-IN</option>
+                    <option value="in">BigBasket-IN</option>
+                    <option value="in">CromaElectronics-IN</option>
+                    <option value="in">FirstCry-IN</option>
+                    <option value="in">Flipkart-IN</option>
+                    <option value="in">Myntra</option>
+                    <option value="in">Nykaa-IN</option>
+                    <option value="in">Pepperfry-IN</option>
+                    <option value="in">Reliance Digital</option>
+                    <option value="in">Samsung-IN</option>
+                    <option value="in">TataCLiQ-IN</option>
+                    <option value="in">VijaySales-IN</option>
+                    <option value="it">Adidas-IT</option>
+                    <option value="it">Agrieuro-IT</option>
+                    <option value="it">Aliexpress-IT</option>
+                    <option value="it">Amicafarmacia-IT</option>
+                    <option value="it">Anticafarmaciaorlandi-IT</option>
+                    <option value="it">Aosom-IT</option>
+                    <option value="it">Arcaplanet-IT</option>
+                    <option value="it">Asics-IT</option>
+                    <option value="it">ASOS-IT</option>
+                    <option value="it">Auto part</option>
+                    <option value="it">Bata-IT</option>
+                    <option value="it">Bennet-IT</option>
+                    <option value="it">BirkenStock-IT</option>
+                    <option value="it">BlueSpirit-IT</option>
+                    <option value="it">BonPrix-IT</option>
+                    <option value="it">Callmewine-IT</option>
+                    <option value="it">Calvinklein_IT</option>
+                    <option value="it">Carrefour-IT</option>
+                    <option value="it">Casio-IT</option>
+                    <option value="it">ChristianDior-IT</option>
+                    <option value="it">Chrono24-IT</option>
+                    <option value="it">CisalfaSport-IT</option>
+                    <option value="it">Cliccaeritira-IT</option>
+                    <option value="it">Comet-IT</option>
+                    <option value="it">COOPDrive-IT</option>
+                    <option value="it">COOP-IT</option>
+                    <option value="it">DeporVillage-IT</option>
+                    <option value="it">Desigual-IT</option>
+                    <option value="it">DrMartens-IT</option>
+                    <option value="it">Eastpak-IT</option>
+                    <option value="it">Easycoop-Bologna-IT</option>
+                    <option value="it">Easycoop-IT</option>
+                    <option value="it">Ebay-IT</option>
+                    <option value="it">ePrice-IT(MKPL Comp)</option>
+                    <option value="it">ePrice-IT-MKPL</option>
+                    <option value="it">ePrice-IT-MKPL</option>
+                    <option value="it">Escarpe-IT</option>
+                    <option value="it">Esselungaacasa-Milano-IT</option>
+                    <option value="it">Esselungaacasa-Rome-IT</option>
+                    <option value="it">Euronics-IT</option>
+                    <option value="it">Farmae-IT</option>
+                    <option value="it">Fossil-IT</option>
+                    <option value="it">Geox-IT</option>
+                    <option value="it">Gioiapura-IT</option>
+                    <option value="it">Guess-IT</option>
+                    <option value="it">Hogan-IT</option>
+                    <option value="it">Havaianas-IT</option>
+                    <option value="it">HPStore-IT</option>
+                    <option value="it">IBS-IT</option>
+                    <option value="it">IT-Tommy</option>
+                    <option value="it">JD-Sports-IT</option>
+                    <option value="it">Kipling-IT</option>
+                    <option value="it">Lafeltrinelli-IT</option>
+                    <option value="it">LEVI-IT</option>
+                    <option value="it">LG-IT</option>
+                    <option value="it">Libraccio-IT</option>
+                    <option value="it">Libreriauniversitaria-IT</option>
+                    <option value="it">Lloydsfarmacia-IT</option>
+                    <option value="it" style="color: red; font-weight: 700;">Lookfantastic-IT</option>
+                    <option value="it">Lovable-IT</option>
+                    <option value="it">MacroLibrarsi-IT</option>
+                    <option value="it">Marionnaud-IT</option>
+                    <option value="it">MaxiSport-IT</option>
+                    <option value="it">MediaWorld-IT</option>
+                    <option value="it">Mi-IT</option>
+                    <option value="it">Mister-Auto-IT</option>
+                    <option value="it">Modivo-IT</option>
+                    <option value="it">Monclick-IT</option>
+                    <option value="it">Mondadori-IT</option>
+                    <option value="it">Motoabbigliamento-IT</option>
+                    <option value="it">Napapijiri-IT</option>
+                    <option value="it">Norauto-IT</option>
+                    <option value="it">Notino-IT</option>
+                    <option value="it">OVS-IT</option>
+                    <option value="it">Pandora-IT</option>
+                    <option value="it">Puma-IT</option>
+                    <option value="it">Ralphlauren-IT</option>
+                    <option value="it">Reebok-IT</option>
+                    <option value="it">Rinascente-IT</option>
+                    <option value="it">Samsonite-IT</option>
+                    <option value="it">Samsung-IT</option>
+                    <option value="it">Sephora-IT</option>
+                    <option value="it">Shein-IT</option>
+                    <option value="it">Spartoo-IT</option>
+                    <option value="it">Swarovski-IT</option>
+                    <option value="it">Tannico-IT</option>
+                    <option value="it">Tiffany-IT</option>
+                    <option value="it">Tigota-IT</option>
+                    <option value="it">Timberland-IT</option>
+                    <option value="it">Topfarmacia-IT</option>
+                    <option value="it">toycenter.it</option>
+                    <option value="it">Triumph-IT</option>
+                    <option value="it">Unieuro-IT</option>
+                    <option value="it">Vans-IT</option>
+                    <option value="it">Vino75-IT</option>
+                    <option value="it">WestwingNow-IT</option>
+                    <option value="it">Zalando-IT</option>
+                    <option value="it">Zooplus-IT</option>
+                    <option value="jp">Askul</option>
+                    <option value="jp">BicCamera</option>
+                    <option value="jp">HMV-JP</option>
+                    <option value="jp">Joshin web</option>
+                    <option value="jp">Lohaco</option>
+                    <option value="jp">Monotaro</option>
+                    <option value="jp">Naturam</option>
+                    <option value="jp">Nojima </option>
+                    <option value="jp">Rakuten-JP</option>
+                    <option value="jp">Rakuten-JP-MKPL(MKPL Comp)</option>
+                    <option value="jp">Rakuten-JP-MKPL-SIC</option>
+                    <option value="jp">Yahoo-JP-MKPL(MKPL Comp)</option>
+                    <option value="jp">Yahoo-JP-MKPL-SIC</option>
+                    <option value="jp">Yodobashi</option>
+                    <option value="jp">Zozotown</option>
+                    <option value="mx">AdidasOnline-MX</option>
+                    <option value="mx">Apple-MX</option>
+                    <option value="mx">Autozone-MX</option>
+                    <option value="mx">Bellisima-MX</option>
+                    <option value="mx">Bodegaaurrera-MX</option>
+                    <option value="mx">Bodegaaurrera-Super-MX</option>
+                    <option value="mx">CalvinKlein-MX</option>
+                    <option value="mx" style="color:#e31b5c; font-weight: 700;">Chedraui-MX</option>
+                    <option value="mx">Coppel-MX</option>
+                    <option value="mx">Costco-MX</option>
+                    <option value="mx">ElPalaciodeHierro-MX</option>
+                    <option value="mx">Fahorro-MX</option>
+                    <option value="mx">FarmaciaSanPablo-MX</option>
+                    <option value="mx">Farmaciasguadalajara-MX</option>
+                    <option value="mx">Flexi-MX</option>
+                    <option value="mx">Fotomecanica-MX</option>
+                    <option value="mx">Guess-MX</option>
+                    <option value="mx">HomeDepot-MX</option>
+                    <option value="mx">Huawei-MX</option>
+                    <option value="mx">Ishopmixup-MX</option>
+                    <option value="mx">Lacomer-MX</option>
+                    <option value="mx">Laika-MX</option>
+                    <option value="mx">Lego-MX</option>
+                    <option value="mx">LentesWorld-MX</option>
+                    <option value="mx">Levi-MX</option>
+                    <option value="mx">Linio-MX</option>
+                    <option value="mx">Liverpool-MX</option>
+                    <option value="mx">Maskota-MX</option>
+                    <option value="mx">MercadoLibre-MX-MKPL</option>
+                    <option value="mx">Miscota-MX</option>
+                    <option value="mx">Mistermascotas-MX</option>
+                    <option value="mx">mrcdinstrumentos-MX</option>
+                    <option value="mx">Officemax-MX</option>
+                    <option value="mx">Pandora-MX</option>
+                    <option value="mx">Panini-MX</option>
+                    <option value="mx">Petco-mx</option>
+                    <option value="mx">Priceshoes-MX</option>
+                    <option value="mx">Sallymexico-MX</option>
+                    <option value="mx">Samsclub-MX</option>
+                    <option value="mx">Sony-MX</option>
+                    <option value="mx" style="color:#e31b5c; font-weight: 700;">Soriana-MX</option>
+                    <option value="mx" style="color:#e31b5c; font-weight: 700;">Superama-MX</option>
+                    <option value="mx">UnderArmour-MX</option>
+                    <option value="mx">Vans-MX</option>
+                    <option value="mx">Vyorsa-MX</option>
+                    <option value="mx">Walmart-MX(MKPL Comp)</option>
+                    <option value="mx">Walmart-MX-MKPL</option>
+                    <option value="mx" style="color:#e31b5c; font-weight: 700;">Walmart-Super-MX</option>
+                    <option value="nl">Albert-Heijn-NL</option>
+                    <option value="nl">Alternate-NL</option>
+                    <option value="nl">Apple-NL</option>
+                    <option value="nl">Blokker-NL</option>
+                    <option value="nl">BOL-NL(MKPL Comp)</option>
+                    <option value="nl">BOL-NL-MKPL</option>
+                    <option value="nl">CoolblueBE-NL</option>
+                    <option value="nl">Coolblue-NL</option>
+                    <option value="nl">Decathlon-NL</option>
+                    <option value="nl">Deslegte-NL</option>
+                    <option value="nl">Ebay-NL</option>
+                    <option value="nl">Gamma-NL</option>
+                    <option value="nl">Hema-NL</option>
+                    <option value="nl">Ikea-NL</option>
+                    <option value="nl">Jumbo-NL</option>
+                    <option value="nl">Kruidvat-NL</option>
+                    <option value="nl">lidl-shop-NL</option>
+                    <option value="nl">Maxict-NL</option>
+                    <option value="nl">Mediamarkt-NL</option>
+                    <option value="nl">Microsoft-NL</option>
+                    <option value="nl">Otto-NL</option>
+                    <option value="nl">Samsung-NL</option>
+                    <option value="nl">Toolmax-NL</option>
+                    <option value="nl">Wehkamp-NL</option>
+                    <option value="nl">Zalando-NL</option>
+                    <option value="pl">Allegro</option>
+                    <option value="pl">BonPrix</option>
+                    <option value="pl">Castorama-PL</option>
+                    <option value="pl">Decathlon-PL</option>
+                    <option value="pl">Ebay-PL</option>
+                    <option value="pl">Empik-PL</option>
+                    <option value="pl">Eobuwie-PL</option>
+                    <option value="pl">iSpot-PL</option>
+                    <option value="pl">Komputronik-PL</option>
+                    <option value="pl">Lantre-PL</option>
+                    <option value="pl">Lego-PL</option>
+                    <option value="pl">LeroyMerlin-PL</option>
+                    <option value="pl">Libristo-PL</option>
+                    <option value="pl">MediaExpert-PL</option>
+                    <option value="pl">MediaMarkt-PL</option>
+                    <option value="pl">MODIVO-PL</option>
+                    <option value="pl">Morele</option>
+                    <option value="pl">OBI-PL</option>
+                    <option value="pl">OleOle-PL</option>
+                    <option value="pl">Oponeo-PL</option>
+                    <option value="pl">RTV-EURO-AGD-PL</option>
+                    <option value="pl">Taniaksiazka-PL</option>
+                    <option value="pl">Taniaksiazka-PL-TBD</option>
+                    <option value="pl">X-kom</option>
+                    <option value="pl">Zalando-PL</option>
+                    <option value="sa">Carrefour-SA</option>
+                    <option value="sa">Eddy-SA</option>
+                    <option value="sa">Extra-SA</option>
+                    <option value="sa">Jarir-SA</option>
+                    <option value="sa">Lulu-SA</option>
+                    <option value="sa">Nahdi-SA</option>
+                    <option value="sa">Namshi-SA</option>
+                    <option value="sa">Noon-SA(MKPL Comp)</option>
+                    <option value="sa">Noon-SA-MKPL</option>
+                    <option value="sa">Noon-SA-Now-MKPL</option>
+                    <option value="sa">Saco-SA</option>
+                    <option value="sa">Sivvi-SA</option>
+                    <option value="sa">Underarmour-SA</option>
+                    <option value="sa">Virginmegastore-SA</option>
+                    <option value="sa">Xcite-SA</option>
+                    <option value="se">Adlibris</option>
+                    <option value="se">Ahlens</option>
+                    <option value="se">Apotea-SE</option>
+                    <option value="se">Biltema-SE</option>
+                    <option value="se">Boozt-SE</option>
+                    <option value="se">Cdon</option>
+                    <option value="se">Elgiganten-SE</option>
+                    <option value="se">Ica</option>
+                    <option value="se">Mediamarkt-SE</option>
+                    <option value="se">Netonnet-SE</option>
+                    <option value="se">Pricerunner-SE</option>
+                    <option value="se">ToySpace-SE</option>
+                    <option value="se">Zalando-SE</option>
+                    <option value="sg">Best Denki_SING</option>
+                    <option value="sg">ColdStorage_SING</option>
+                    <option value="sg">Courts_SING</option>
+                    <option value="sg">FairPrice_SING</option>
+                    <option value="sg">Guardian_SING</option>
+                    <option value="sg">HarveyNorman_SING</option>
+                    <option value="sg">HomenOffice_SING</option>
+                    <option value="sg">iHerb_SING</option>
+                    <option value="sg">KohePets_SING</option>
+                    <option value="sg">Lazada_SING(MKPL Comp)</option>
+                    <option value="sg">Lazada_SING-MKPL</option>
+                    <option value="sg">Mothercare_SING</option>
+                    <option value="sg">Petloverscentre_SING</option>
+                    <option value="sg">Polypet_SING</option>
+                    <option value="sg">PupsikStudio_SING</option>
+                    <option value="sg">Sephora_SING</option>
+                    <option value="sg">Shopee_SING(MKPL Comp)</option>
+                    <option value="sg">Shopee_SING-MKPL</option>
+                    <option value="sg">Shopitree_SING</option>
+                    <option value="sg">StationeryWorld_SING</option>
+                    <option value="sg">Tangs_SING</option>
+                    <option value="sg">Toys R Us_SING</option>
+                    <option value="tr">A101-TR</option>
+                    <option value="tr">Adidas-TR</option>
+                    <option value="tr">Arcelik-TR</option>
+                    <option value="tr">Babil-TR</option>
+                    <option value="tr">Beymen-TR</option>
+                    <option value="tr">Bkmkitap-TR</option>
+                    <option value="tr">Boyner-TR</option>
+                    <option value="tr">Carrefoursa-TR</option>
+                    <option value="tr">CicekSepeti-TR</option>
+                    <option value="tr">Decathlon-TR</option>
+                    <option value="tr">Defacto-TR</option>
+                    <option value="tr">DR-TR</option>
+                    <option value="tr">Ebebek-TR</option>
+                    <option value="tr">Flo-TR</option>
+                    <option value="tr">Gratis-TR</option>
+                    <option value="tr">Hepsiburada-TR(MKPL Comp)</option>
+                    <option value="tr">Hepsiburada-TR-MKPL</option>
+                    <option value="tr">Idefix-TR</option>
+                    <option value="tr">Instreet-TR</option>
+                    <option value="tr">Istegelsin-TR</option>
+                    <option value="tr">Itopya-TR</option>
+                    <option value="tr">Karaca-TR</option>
+                    <option value="tr">Kitapyurdu-TR</option>
+                    <option value="tr">Kitapzen-TR</option>
+                    <option value="tr">Koctas-TR</option>
+                    <option value="tr">Macrocenter-TR</option>
+                    <option value="tr">MediaMarkt-TR</option>
+                    <option value="tr">Migros-TR</option>
+                    <option value="tr">Modanisa-TR</option>
+                    <option value="tr">Morhipo-TR</option>
+                    <option value="tr">Mudo-TR</option>
+                    <option value="tr">Nike-TR</option>
+                    <option value="tr">Nobelkitap-TR</option>
+                    <option value="tr">Penti-TR</option>
+                    <option value="tr">Philips-TR</option>
+                    <option value="tr">SaatveSaat-TR</option>
+                    <option value="tr">Samsung-TR</option>
+                    <option value="tr">Teknosa-TR</option>
+                    <option value="tr">Tekzen-TR</option>
+                    <option value="tr">Trendyol-TR(MKPL Comp)</option>
+                    <option value="tr">Trendyol-TR-MKPL</option>
+                    <option value="tr">Vatan-TR</option>
+                    <option value="tr">Vestel-TR</option>
+                    <option value="tr">Watsons-TR</option>
+                    <option value="uk">Adidas-UK</option>
+                    <option value="uk">Aldi-grocery-UK</option>
+                    <option value="uk">Allbeauty-UK</option>
+                    <option value="uk">Americangolf</option>
+                    <option value="uk">Annsummers-UK</option>
+                    <option value="uk">AO.com-UK</option>
+                    <option value="uk">ApplianceCity-UK</option>
+                    <option value="uk">AppliancesDirect</option>
+                    <option value="uk">Argos</option>
+                    <option value="uk">ASDA</option>
+                    <option value="uk">Asos</option>
+                    <option value="uk">Asus-eshop-UK</option>
+                    <option value="uk">Beaverbrooks</option>
+                    <option value="uk">Blacks</option>
+                    <option value="uk">Blackwell-bookshop</option>
+                    <option value="uk">Boots</option>
+                    <option value="uk">Bootskitchenappliances</option>
+                    <option value="uk">BoxUK</option>
+                    <option value="uk">BulkPowders-UK</option>
+                    <option value="uk">CalvinKlein-UK</option>
+                    <option value="uk">Carhartt-UK</option>
+                    <option value="uk">carparts4less</option>
+                    <option value="uk">CarPhoneWarehouse</option>
+                    <option value="uk">Chainreactioncycles</option>
+                    <option value="uk">Charles Clinkard</option>
+                    <option value="uk">Chrono24-UK</option>
+                    <option value="uk">Clarks-UK</option>
+                    <option value="uk">Costco-UK</option>
+                    <option value="uk">CotswoldOutdoor</option>
+                    <option value="uk">Crocs-UK</option>
+                    <option value="uk">CultBeauty_UK</option>
+                    <option value="uk">Currys</option>
+                    <option value="uk">Debenhams</option>
+                    <option value="uk">Decathlon-UK</option>
+                    <option value="uk">Demon Tweeks</option>
+                    <option value="uk">Disney-UK</option>
+                    <option value="uk">DIY</option>
+                    <option value="uk">Dr.Martens</option>
+                    <option value="uk">Dreams-UK</option>
+                    <option value="uk">DTC-Nintendo-UK</option>
+                    <option value="uk">Dunelm-Mill</option>
+                    <option value="uk">Ebay-UK</option>
+                    <option value="uk">Ebay-UK-ao</option>
+                    <option value="uk">Ebay-UK-tesco</option>
+                    <option value="uk">Ebay-UK-Tradeinn</option>
+                    <option value="uk">Ernestjones</option>
+                    <option value="uk">Escentual-UK</option>
+                    <option value="uk">Eurocarparts</option>
+                    <option value="uk">EvansCycles</option>
+                    <option value="uk">FeelUnique</option>
+                    <option value="uk">FFX-UK</option>
+                    <option value="uk">Firstclasswatches</option>
+                    <option value="uk">Fitbit-GB</option>
+                    <option value="uk">Footlocker-UK</option>
+                    <option value="uk">Fragrancedirect</option>
+                    <option value="uk">Game</option>
+                    <option value="uk">Gear4music</option>
+                    <option value="uk">Geox-UK</option>
+                    <option value="uk">Goldsmiths</option>
+                    <option value="uk">Golf Online</option>
+                    <option value="uk">GoOutDoors</option>
+                    <option value="uk">Halfords</option>
+                    <option value="uk">Havaianas</option>
+                    <option value="uk">Hive-UK</option>
+                    <option value="uk">HMVOnlineStore-UK</option>
+                    <option value="uk">Hobbycraft</option>
+                    <option value="uk">Hollandandbarrett</option>
+                    <option value="uk">Homebase</option>
+                    <option value="uk">Hotelchocolat-UK</option>
+                    <option value="uk">Houseoffraser</option>
+                    <option value="uk">HP</option>
+                    <option value="uk">HSamuel</option>
+                    <option value="uk">Hughesdirect</option>
+                    <option value="uk">Iceland-UK</option>
+                    <option value="uk">Jack & Jones</option>
+                    <option value="uk">JD Williams</option>
+                    <option value="uk">Jdsports</option>
+                    <option value="uk">Joe-Browns-UK</option>
+                    <option value="uk">John Lewis</option>
+                    <option value="uk">Jojomamanbebe-GB</option>
+                    <option value="uk">JonesUK</option>
+                    <option value="uk">Joules-UK</option>
+                    <option value="uk">Lacoste-UK</option>
+                    <option value="uk">Lakeland Limited</option>
+                    <option value="uk">Laptops-Direct</option>
+                    <option value="uk">Levi-UK</option>
+                    <option value="uk">Littlewoods</option>
+                    <option value="uk">lloydspharmacy</option>
+                    <option value="uk" style="color: red; font-weight: 700;">Looksfantastic</option>
+                    <option value="uk">Lovehoney</option>
+                    <option value="uk">Lyst-UK</option>
+                    <option value="uk">Machinemart</option>
+                    <option value="uk">Mainline-Mens</option>
+                    <option value="uk">Majestic-UK</option>
+                    <option value="uk">Mamasandpapas-UK</option>
+                    <option value="uk">Markselectrical-UK</option>
+                    <option value="uk">MarksSpencer</option>
+                    <option value="uk">Matalan</option>
+                    <option value="uk">MichaelKors-UK</option>
+                    <option value="uk">Millets</option>
+                    <option value="uk">Morrisons-UK</option>
+                    <option value="uk">Mountainwarehouse-UK</option>
+                    <option value="uk">Myprotein-UK</option>
+                    <option value="uk">Newlook-UK</option>
+                    <option value="uk">Next</option>
+                    <option value="uk">O2-UK</option>
+                    <option value="uk">Ocado</option>
+                    <option value="uk">OfficeUK</option>
+                    <option value="uk">OnePlus-UK</option>
+                    <option value="uk">Online4Baby-UK</option>
+                    <option value="uk">Pandora-UK</option>
+                    <option value="uk">ParkCameras</option>
+                    <option value="uk">Pet Sathome</option>
+                    <option value="uk">Plumbnation</option>
+                    <option value="uk">PlumbWorld-UK</option>
+                    <option value="uk">PowertoolWorld</option>
+                    <option value="uk">Pramworld-GB</option>
+                    <option value="uk">Prettylittlething-UK</option>
+                    <option value="uk">Puma-UK</option>
+                    <option value="uk">QVCuk</option>
+                    <option value="uk">Reebok-UK</option>
+                    <option value="uk">Regatta-GB</option>
+                    <option value="uk">Robert Dyas</option>
+                    <option value="uk">Ryman</option>
+                    <option value="uk">Sainsburys</option>
+                    <option value="uk">Salomon-UK</option>
+                    <option value="uk">SamsungUK</option>
+                    <option value="uk">Screw Fix</option>
+                    <option value="uk">Sephora-UK</option>
+                    <option value="uk">Sharkclean-UK</option>
+                    <option value="uk">Shein-UK</option>
+                    <option value="uk">ShopBT-GB</option>
+                    <option value="uk">Simplybe-UK</option>
+                    <option value="uk">Skechers-UK</option>
+                    <option value="uk">Smyths</option>
+                    <option value="uk">Spartoo-UK</option>
+                    <option value="uk">SportsDirect</option>
+                    <option value="uk">SportsShoes</option>
+                    <option value="uk">Superdrug</option>
+                    <option value="uk">Swarovski-UK</option>
+                    <option value="uk">Tassimo-UK</option>
+                    <option value="uk">Tedbaker-UK</option>
+                    <option value="uk">Tesco(MKPL Comp)</option>
+                    <option value="uk">Tesco-MKPL</option>
+                    <option value="uk">Tesco-Wine</option>
+                    <option value="uk">Tessuti-UK</option>
+                    <option value="uk">TheNorthFace-UK</option>
+                    <option value="uk">Theperfumeshop</option>
+                    <option value="uk">The-Range-UK</option>
+                    <option value="uk">TheWhiskyExchange</option>
+                    <option value="uk">Toolstop</option>
+                    <option value="uk">Tower-London-UK</option>
+                    <option value="uk">Toysrus-UK</option>
+                    <option value="uk">Triump-UK</option>
+                    <option value="uk">UK-Tommy</option>
+                    <option value="uk">Under Armour</option>
+                    <option value="uk">Vans</option>
+                    <option value="uk">Vax-UK</option>
+                    <option value="uk">Very</option>
+                    <option value="uk">VictorianPlumbing-UK</option>
+                    <option value="uk">Victoriaplum-GB</option>
+                    <option value="uk">VikingDirect</option>
+                    <option value="uk">Vileda-UK</option>
+                    <option value="uk">Viovet-UK</option>
+                    <option value="uk">WaitroseDeliver</option>
+                    <option value="uk">Watches2u</option>
+                    <option value="uk">Watchshop</option>
+                    <option value="uk">WaterStones</option>
+                    <option value="uk">Wayfair-UK</option>
+                    <option value="uk">WHSmith</option>
+                    <option value="uk">Wickes-UK</option>
+                    <option value="uk">Wiggle</option>
+                    <option value="uk">Wilkinson</option>
+                    <option value="uk">Zalando-UK</option>
+                    <option value="uk">Zavvi</option>
+                    <option value="uk" style="color:#e31b5c; font-weight: 700;">zooplusUK</option>
+                    <option value="us">1800PetMeds</option>
+                    <option value="us">ABT</option>
+                    <option value="us">Academy</option>
+                    <option value="us">AceHardware</option>
+                    <option value="us">AcmeTools</option>
+                    <option value="us">Adidas</option>
+                    <option value="us">AdvancedAuto</option>
+                    <option value="us">AlbeeBaby</option>
+                    <option value="us">Aldoshoes</option>
+                    <option value="us">Allmodern</option>
+                    <option value="us">American_Psychological_Association-US</option>
+                    <option value="us">Ariat-US</option>
+                    <option value="us">Asos-US</option>
+                    <option value="us">BananaRepublic</option>
+                    <option value="us" style="color:#e31b5c; font-weight: 700;">Barnes and Noble</option>
+                    <option value="us">BathandBodyWorks-US</option>
+                    <option value="us">Belk</option>
+                    <option value="us">BestBuy</option>
+                    <option value="us">BestBuy-CA</option>
+                    <option value="us">Bestbuy-Trade</option>
+                    <option value="us">Bhphotovideo</option>
+                    <option value="us">Bloomingdales</option>
+                    <option value="us">Blue Nile</option>
+                    <option value="us">Bose-US</option>
+                    <option value="us">Brilliant Earth</option>
+                    <option value="us">Cambridge_University_Press-US</option>
+                    <option value="us">CampingWorld-US</option>
+                    <option value="us">Carhartt-US</option>
+                    <option value="us">Carters</option>
+                    <option value="us">Cengage-US</option>
+                    <option value="us">ChildrensPlace-US</option>
+                    <option value="us">CoachOutlet-US</option>
+                    <option value="us">Columbia</option>
+                    <option value="us">Costco</option>
+                    <option value="us">Crocs-US</option>
+                    <option value="us">CrutchField</option>
+                    <option value="us">CVS</option>
+                    <option value="us">DavidsBridal_Inc</option>
+                    <option value="us">Dell</option>
+                    <option value="us">Dick_s</option>
+                    <option value="us">Dickies</option>
+                    <option value="us">Disney</option>
+                    <option value="us">DTC-Aeropostale-US</option>
+                    <option value="us">DTC-Annataylor-US</option>
+                    <option value="us">DTC-BathAndBodyWorks-US</option>
+                    <option value="us">DTC-HeyDude-US</option>
+                    <option value="us">DTC-Old navy-US</option>
+                    <option value="us">DTC-SheIn-US</option>
+                    <option value="us">DTC-Skims-US</option>
+                    <option value="us">DTC-Society6-US</option>
+                    <option value="us">Dyson</option>
+                    <option value="us">ebay.com</option>
+                    <option value="us">Elsevier</option>
+                    <option value="us">Express-US</option>
+                    <option value="us">Farfetch-US</option>
+                    <option value="us">FarmandFleet-US</option>
+                    <option value="us">Finishline</option>
+                    <option value="us">Forever21-US</option>
+                    <option value="us">FreePeople-US</option>
+                    <option value="us">GameStop</option>
+                    <option value="us">Gapfactory-US</option>
+                    <option value="us">Gap-US</option>
+                    <option value="us">Garmin-US</option>
+                    <option value="us">GNC</option>
+                    <option value="us">GracoBabyUS</option>
+                    <option value="us">H&M</option>
+                    <option value="us">HarborFreight</option>
+                    <option value="us">Heb-US</option>
+                    <option value="us">HomeDepot</option>
+                    <option value="us">Hottopic</option>
+                    <option value="us">HP</option>
+                    <option value="us">Instacart-SAT</option>
+                    <option value="us">JCP</option>
+                    <option value="us">JCrew-US</option>
+                    <option value="us">JoannFabric</option>
+                    <option value="us">JossAndMain</option>
+                    <option value="us">Katespade-US</option>
+                    <option value="us">Kay</option>
+                    <option value="us" style="color:#e31b5c; font-weight: 700;">Kohls</option>
+                    <option value="us">Kroger</option>
+                    <option value="us">Landsend-US</option>
+                    <option value="us">Lanebryant-US</option>
+                    <option value="us">Lee</option>
+                    <option value="us">Lego</option>
+                    <option value="us">Lenovo</option>
+                    <option value="us">Levis-US</option>
+                    <option value="us">LG</option>
+                    <option value="us">LLBean</option>
+                    <option value="us" style="color:#e31b5c; font-weight: 700;">Lowes</option>
+                    <option value="us">LuckyVitamin</option>
+                    <option value="us">Lululemon-US</option>
+                    <option value="us">Lulus</option>
+                    <option value="us">Macy_s</option>
+                    <option value="us">Madewell</option>
+                    <option value="us">Marshalls-US</option>
+                    <option value="us">Mattressfirm</option>
+                    <option value="us">McGrawHill HigherEd-US</option>
+                    <option value="us">Menswearhouse-US</option>
+                    <option value="us">Merrell</option>
+                    <option value="us">Michael Kors-US</option>
+                    <option value="us">Michaels</option>
+                    <option value="us">Microcenter-US</option>
+                    <option value="us">Moosejaw</option>
+                    <option value="us">Mrchewy</option>
+                    <option value="us">Neiman Marcus</option>
+                    <option value="us">NetaPorter</option>
+                    <option value="us">NewBalance</option>
+                    <option value="us" style="color:#e31b5c; font-weight: 700;">Newegg</option>
+                    <option value="us">NewEggBusiness</option>
+                    <option value="us">NFL</option>
+                    <option value="us">Nike-US</option>
+                    <option value="us">Nordstrom</option>
+                    <option value="us">NordstromRack_US</option>
+                    <option value="us">OfficeDepot</option>
+                    <option value="us" style="color:#e31b5c; font-weight: 700;">OpticsPlanet</option>
+                    <option value="us">OReillyAutoparts</option>
+                    <option value="us">PacSun</option>
+                    <option value="us">Pandora-US</option>
+                    <option value="us">Partycity</option>
+                    <option value="us">Petco</option>
+                    <option value="us">PetSmart</option>
+                    <option value="us">PotteryBarn</option>
+                    <option value="us">PrettyLittleThing-US</option>
+                    <option value="us">Puma</option>
+                    <option value="us">RackRoom</option>
+                    <option value="us">Ralphlauren-US</option>
+                    <option value="us">RayBan-US</option>
+                    <option value="us">Reebok-US</option>
+                    <option value="us">Revolve-US</option>
+                    <option value="us">Roku</option>
+                    <option value="us">Saks</option>
+                    <option value="us">saksoff5th-US</option>
+                    <option value="us">Sallybeauty-US</option>
+                    <option value="us">Samsclub</option>
+                    <option value="us">Savagex-US</option>
+                    <option value="us">Sephora</option>
+                    <option value="us" style="color:#e31b5c; font-weight: 700;">ShoeMall</option>
+                    <option value="us">Ssense-US</option>
+                    <option value="us">Staples-US</option>
+                    <option value="us">Stevemadden-US</option>
+                    <option value="us">SweetWater</option>
+                    <option value="us" style="color:#e31b5c; font-weight: 700;">Target</option>
+                    <option value="us">Tillys</option>
+                    <option value="us">TireRack</option>
+                    <option value="us">Toryburch-US</option>
+                    <option value="us">Tracfone</option>
+                    <option value="us">TractorSupply</option>
+                    <option value="us">Ulta</option>
+                    <option value="us">UnderArmour-US</option>
+                    <option value="us">UrbanOutfitters</option>
+                    <option value="us">Vans-US</option>
+                    <option value="us">VeraBradley</option>
+                    <option value="us">VictoriasSecret</option>
+                    <option value="us">VictoriasSecret-US</option>
+                    <option value="us">VitaCost</option>
+                    <option value="us">Vitamin Shoppe</option>
+                    <option value="us" style="color:#e31b5c; font-weight: 700;">Walgreens</option>
+                    <option value="us">Walmart(MKPL Comp)</option>
+                    <option value="us">Walmart-MKPL</option>
+                    <option value="us">WalmartGrocery-US</option>
+                    <option value="us">Walmartpetrx</option>
+                    <option value="us">Wayfair</option>
+                    <option value="us">Wiley-US</option>
+                    <option value="us">Williams-sonoma</option>
+                    <option value="us">WorldMarket</option>
+                    <option value="us">Wrangler</option>
+                    <option value="us">Yeti-US</option>
+                    <option value="us">Zales-US</option>
+                </select>
+                <div id="dialogoverlay"></div>
+                <div id="dialogbox">
+                    <div id="dialogboxhead"></div>
+                    <div id="dialogboxbody"></div>
+                    <div id="dialogboxfoot"></div>
+                </div>
+                <h3 id="status"></h3>
+                <button onclick="promot.render('Please Enter competitor name here, as per UPT/G2S2:','changeText')"
+                    id="btnPrompt" class="btn btn-primary" onclick="CustomPrompt()">Competitor</button>
+                <button id="g2s2Table" onclick="var_m()" class="btn btn-primary"
+                    style="margin-top: 8px;width: 90px;">G2S2</button>
+            </div>
+            <div class="col">
+                <button id="g2s2Table" onclick="uptf('Myra')" class="btn btn-success">Myra/ST</button>
+                <button id="g2s2Table" onclick="uptf('VIBE')" class="btn btn-success">Vibe</button>
+                <button id="g2s2Table" onclick="uptf('Reporting')" class="btn btn-success">Reporting</button>
+                <button id="g2s2Table" onclick="uptf('Full')" class="btn btn-success">UPT</button>
+                <button id="g2s2Table" onclick="uptf('MKPL')" class="btn btn-success">MKPL</button>
+            </div>
+        </div>
+        <div class="g2s2RawData">
+            <span>Paste g2s2 raw data of that competitor:</span>
+            <textarea id="g2s2RawData" name="g2s2RawData" rows="5" cols="60"
+                placeholder="This field is reserved for G2S2 Data. Paste g2s2 data here."></textarea>
+            </th>
+        </div>
+        <div id="validationBtn" class="d-flex justify-content-evenly">
+            <button id="validationbutn" onclick="validateFunction()" class="btn btn-primary btn-lg" style="background-color: #0d6efd;
+            border: 2px solid #0d6efd;">Myra Validate</button>
+            <button id="validationbutn" onclick="var_q()" class="btn btn-danger btn-lg" style="background-color: red;
+            border: 2px solid red;">Vibe validation</button>
+        </div>
+        <h3 id='caMapWarning' style="color:#e31b5c; font-weight: 600;">You have matched Y type in CA MKPL. Kindly check
+            'Please find below
+            checklist for
+            Y TYPE Matching:' section for MAP exceptions.</h3>
+        <h3 id='wrongC' style="color:#e31b5c; font-weight: 600;">Seems like You have provided wrong Comp Name or G2S2,
+            please check
+            once.</h3>
+        <div class="output" disabled="true">
+            <h3>Core Gls of the competitor which can be matched in Y type:</h3>
+            <div id="coreGls" style="background-color: white ;"></div>
+            <h3>Non Core Gls of the competitor, please don't match in Y type:</h3>
+            <div id="nonCoreGls" style="background-color: white ;"></div>
+            <h3>Additional Information:</h3>
+            <div id="additionalInfo" style="background-color: white ;"></div>
+            <h3 id="ytypeheader">Please find below checklist for <b> Y TYPE</b> Matching:</h3>
+            <div id="mainOutput" style="background-color: white ;"></div>
+            <h3 id="mainOutputNTypeHeader" style="color:#e31b5c;">Checklist for <b>N TYPE</b> Matching:</h3>
+            <div id="mainOutputNType" style="background-color: white ;"></div>
+            <h3 style="color:#e31b5c;">In-Scope Errors in ST Matching:</h3>
+            <div id="errorDiv" style="background-color: white ;"></div>
+            <h3>Checklist for Myra Configuration:</h3>
+            <div id="myraChecklist" style="background-color: white;"></div>
+            <!-- <h3>Login Credentials:</h3>
+            <div id="loginCredentials" style="background-color: white;"></div> -->
+            <h3>Other Important Points:</h3>
+            <div id="addInfo" style="background-color: white ;">
+                <ul>
+                    <li>
+                        <h4>Please use below End Time to launch Vibe if there is no specific end time mentioned in
+                            competitor site.<span style="color: red;">IMPORTANT: IF COMPETITOR HAS CALLED OUT ANY END
+                                TIME(OTHER THAN 23:59 LOCAL) OR TIME ZONE, THEN LAUNCH THE VIBE AS PER THE PROVIDED END
+                                TIME.</span>
+                        </h4>
+                        <table style="width:100%">
+                            <tr>
+                                <td>MKPL</td>
+                                <td>End Time(UTC)</td>
+                            </tr>
+                            <tr>
+                                <td>AE</td>
+                                <td>19:59:00</td>
+                            </tr>
+                            <tr>
+                                <td>AU</td>
+                                <td>13:59:00</td>
+                            </tr>
+                            <tr>
+                                <td>BE</td>
+                                <td>21:59:00</td>
+                            </tr>
+                            <tr>
+                                <td>BR</td>
+                                <td>02:59:00(Next Day)</td>
+                            </tr>
+                            <tr>
+                                <td>CA</td>
+                                <td>03:59:00(Next Day)</td>
+                            </tr>
+                            <tr>
+                                <td>DE</td>
+                                <td>21:59:00</td>
+                            </tr>
+                            <tr>
+                                <td>EG</td>
+                                <td>20:59:00</td>
+                            </tr>
+                            <tr>
+                                <td>ES</td>
+                                <td>21:59:00</td>
+                            </tr>
+                            <tr>
+                                <td>FR</td>
+                                <td>21:59:00</td>
+                            </tr>
+                            <tr>
+                                <td>IT</td>
+                                <td>21:59:00</td>
+                            </tr>
+                            <tr>
+                                <td>JP</td>
+                                <td>14:59:00</td>
+                            </tr>
+                            <tr>
+                                <td>KSA/SA</td>
+                                <td>20:59:00</td>
+                            </tr>
+                            <tr>
+                                <td>MX</td>
+                                <td>05:59:00(Next Day)</td>
+                            </tr>
+                            <tr>
+                                <td>NL</td>
+                                <td>21:59:00</td>
+                            </tr>
+                            <tr>
+                                <td>PL</td>
+                                <td>21:59:00</td>
+                            </tr>
+                            <tr>
+                                <td>SE</td>
+                                <td>21:59:00</td>
+                            </tr>
+                            <tr>
+                                <td>SG</td>
+                                <td>15:59:00</td>
+                            </tr>
+                            <tr>
+                                <td>TR</td>
+                                <td>20:59:00</td>
+                            </tr>
+                            <tr>
+                                <td>UK</td>
+                                <td>22:59:00</td>
+                            </tr>
+                            <tr>
+                                <td>US</td>
+                                <td>In US we have different time zones please check in competitor site if provided
+                                    any and launch vibe accordingly. Ex 23:59 EST is 03:59:00(Next Day), 23:59 PT is
+                                    next day 06:59:00(Next Day), 23:59 CST is next day 04:59:00(Next Day). If there is
+                                    no end Time mentioned in competitor, then launch the vibe till Next Day - 6:59 AM.
+                                </td>
+                            </tr>
+                        </table>
+                    </li>
+                    <li>Gift Cards , Mail in rebate, Rewards and Bounceback/Cashback promotions will be matched in Y
+                        type WW effective 4/12/2023.
+                        <ul>
+                            <li>Please note in Rewards promotion only the $ and % based Reward promotions should be
+                                matched in Y type with Rebate Type <b>Giftcard</b> and Points-based Reward
+                                promotions (such as Get 10 points back in Rewards) will not qualify Y type matching. for
+                                Example: <br>
+                                <ol type="i">
+                                    <li>Receive $3 Cash rewards - Rebate Type : Giftcard </li>
+                                    <li>Get $20 Reward on Select Oral-B - Rebate Type : Giftcard </li>
+                                    <li>Buy 2 & get 20% Back in Bonus Rewards - Rebate Type : BXGY_BXGY%</li>
+                                </ol>
+                            </li>
+                            <li>Bounceback/Cashback promotions that require registering on external website or claiming
+                                discount on external websites will not be matched as Y type</li>
+                        </ul>
+                    </li>
+                    <li>If NYP should be included as per the SOP in any GL level vibe(Y or N type) world wide. Then
+                        please don't select NYP, by default it will be included.</li>
+                    <li>Please match all promotions on <b>Pre-Owned/Used/Refurbished/Reconditioned</b> products, if
+                        Amazon has
+                        selection for the same. Kindly check for a sample of 5 products if they carry an overlap in
+                        Amazon. Promos not having any overlapping SKUs with Amazon need not be matched.
+                    </li>
+                    <li>
+                        If the discounted price/final price after applying promotion(coupon or anything) in cart is
+                        already available in product DP, in such cases kindly check for which price are we scraping
+                        before matching/configuring the promotion.
+                    </li>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="virtual-select.min.js"></script>
+    <script language='javascript' src="validation.js"></script>
+</body>
+
+</html>

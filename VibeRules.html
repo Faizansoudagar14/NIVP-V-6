@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rules</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="bootstrap.min.js">
+    <link rel="stylesheet" type="text/css" href="validation.css">
+    <link rel="stylesheet" type="text/css" href="virtual-select.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+SC:wght@700&family=Lato:ital,wght@1,300&display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <link rel="icon" href="https://i.pinimg.com/originals/01/ca/da/01cada77a0a7d326d85b7969fe26a728.jpg">
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"> </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <button id="vibeRules" onclick="window.open( 'NBB Validation Page.html', '_self' );"
+        class="btn btn-warning btn-lg"><i style="font-size:24px" class="fa">NIVP</i></button>
+    <button id="refreshButn" onclick="window.location.reload();" class="btn btn-warning btn-lg"><i
+            style="font-size:24px" class="fa">&#xf021;</i></button>
+    <h1>Welcome to Rebate Rule Page</h1>
+    <div class="alert alert-danger" role="alert" style="width:60%; margin:auto; margin-bottom: 10px;">
+        <p> This page's rules are only for <b style="color: red;"> Hulk Enabled MKPL</b>. Please reachout to POCs if you
+            have
+            any doubts in non-Hulk
+            regions.</p>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <label for="enteredRebateType">Please Select Rebate Type</label>
+                <select class="form-control" name="enteredRebateType" id="enteredRebateType">
+                    <option value="#">Please Select Rebate type</option>
+                    <option value="bx$gy$">BXGY_BX$GY$</option>
+                    <option value="bx$gy%">BXGY_BX$GY%</option>
+                </select>
+            </div>
+            <div class="col">
+                <label for="enteredThreshold">Please Select Number of Threshold</label>
+                <select class="form-control" name="enteredThreshold" id="enteredThreshold">
+                    <option value="#">Please Select Number of Threshold</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+            </div>
+            <div class="col">
+                <button onclick="mainFunction()" class="btn btn-primary btn-lg" style="margin-top: 20px;"><i
+                        style="font-size:24px" class="fa">OK</i></button>
+            </div>
+            <div id="mainOutput" style="margin-top: 20px; padding: 0px; font-size: 1em">
+            </div>
+            <button onclick="getRules()" id="getRules" class="btn btn-primary btn-lg"
+                style="margin: auto; width: 200px;" disabled><i style="font-size:24px" class="fa">Rules</i></button>
+            <script language='javascript' src="viberules.js"></script>
+            <div id="finalRules" style="margin-top: 20px; background: white; font-size: 1.5em; color: green;">
+            </div>
+</body>
+
+</html>

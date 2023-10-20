@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>NBB FAQs</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="bootstrap.min.js">
+    <link rel="stylesheet" type="text/css" href="virtual-select.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+SC:wght@700&family=Lato:ital,wght@1,300&display=swap"
+        rel="stylesheet">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/5726/5726470.png">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="faq.css">
+    <style>
+        blockquote {
+            border-left: 0px
+        }
+    </style>
+</head>
+
+<body style="background-color: #be96be; color: black;">
+    <h1>Welcome to NBB FAQs Page</h1>
+    <p><i><b style=" position: fixed; right: 20px; bottom: 30px; font-weight: 600; font-family: italic; ">Last Updated
+                on: 06/29/23</b></i></p>
+    <h3>Please start typing to search your question.</h3>
+    <button id="vibeRules" onclick="window.open( 'NBB Validation Page.html', '_self' );"
+        style="position: fixed;top: 30px;left: 20px; color: black;" class="btn btn-warning btn-lg"><i
+            style="font-size:15px" class="fa">NIVP</i></button>
+    <div class="row">
+        <div class="left">
+            <input type="text" id="mySearch" onkeyup="myFunction();"
+                placeholder="Search here.. please type 'submit query', if no match found" title="Type in a category">
+            <button type="button" class="btn btn-primary btn-lg" onClick="search(id)" id="button"
+                style="margin-top:10px ;">Highlight Your Search</button>
+            <ul id="myMenu">
+                <li id="question"><a href="#">
+                        <span> <b>Customer Restricted Usage in World Wide? </b></span>
+                        <blockquote>
+                            Promotions that are valid only 'xx' times per customer or per account or per order where
+                            'xx' can be any number equal to or greater than 1 will be matched by populating the exact
+                            value of ‘xx’ in Maximum Restricted No of Usage field that is available in Vibe and Myra
+                            forms of UPT. For example, if promotion is valid once per customer/order/account, the
+                            Maximum Restricted No of Usage = 1 and if it is valid 5x per customer/order/account Maximum
+                            Restricted No of Usage = 5.
+                        </blockquote>
+                    </a></li>
+                <li id="question"><a href="#">
+                        <p><b>Yodobashi Point based promotion Configuration Myra rule</b>
+                        </p>
+                        <blockquote>
+                            As per the recent update, for books as well (similar to all other GLs for Yodibashi) we will
+                            have 10% threshold unlike earlier of 3% hence it will follow as shared below: <br>
+                            If rebate is less than 10%, overall points on DP will be base points <br>
+                            If rebate is greater than 10%, 10% rounded up will be base and the remaining as NBB points.
+                        </blockquote>
+                    </a></li>
+                <li id="question"><a href="#">
+                        <span><b>How many MKPLs are currently being monitored where hulk is not launched?</b></span>
+                        <blockquote>
+                            Currently only 1 – BE MKPL alone is not hulk enabled. Also IN MKPL we don't match any
+                            promotions, i,e., IN MKPL is out of scope of HOTW matching.
+                        </blockquote>
+                    </a></li>
+
+                <li id="question"><a href="#">
+                        <span><b>What is Basket level promotion?</b></span>
+                        <blockquote>
+                            To avail a promotion if there is a certain price threshold basket which needs to be built
+                            only after which rebate is applicable, then such promotions are called as Basket level
+                            promotions. For ex: Spend $50 and get $10 off, Extra 20% off when you spend $100 or more.
+                        </blockquote>
+                    </a></li>
+
+                <li id="question"><a href="#">
+                        <span><b>What is multibuy promotion?</b></span>
+                        <blockquote>
+                            To avail a promotion if more than a single product needs to be bought/purchased together
+                            then such promotions are called as multibuy promotions. For ex:
+                            Buy 5 items, get 10% off, Buy 3 for the price of 2, Buy 6 items, get $20 off.
+                        </blockquote>
+                    </a></li>
+
+                <li id="question"><a href="#">
+                        <span><b>Can we match Members only promotion in World Wide?</b></span>
+                        <blockquote>
+                            Yes, only if a promotion is ‘Free of cost’(without friction i.e., if the membership can be
+                            obtained just by signing in the competitor) we can match such promotions. But only in FR
+                            MKPL -
+                            Please match All(SICs/ICs) Member only promotions in Y type even if it is Free or requires
+                            Payment for membership.
+                        </blockquote>
+                    </a></li>
+
+                <li id="question"><a href="#">
+                        <span><b>List few competitors with minimum cart value and whether to consider or not to consider
+                                this minimum threshold as per SOP.</b></span>
+                        <blockquote>
+                            Zooplus-UK has a minimum cart value of £XX.00 before checkout. Please consider minimum cart
+                            value and match the promotions as per the promo details. <br>
+                            Chedraui-MX offers the minimum purchase amount as $200, regardless of the promotion.
+                            Consider the minimum cart value to match the promotion. For all straight NBB and Coupon we
+                            should consider the threshold as $200, for other basket building promotions which specify
+                            the min. cart value, we can consider that value (should most definitely be over $200). <br>
+                            Zooplus-IT/Zooroyal-DE/Zooplus-DE has a minimum cart value of £XX.00 before checkout. Please
+                            don’t consider minimum cart value and match the promotions as per the promo details.
+                        </blockquote>
+                    </a></li>
+                <li id="question"><a href="#">
+                        <span><b>What action we are supposed to take for MKPL competitors? </b></span>
+                        <blockquote>
+                            For string-based promotions: All you have to do is - add one comment in ST SIM, and make
+                            sure respective MKPL comp g2s2 is checked and accordingly its mentioned for matching w.r.t
+                            MKPL comps.
+                            For Non- string (Vibe) based promotions: Launch Vibe for the main comp as well as the MKPL
+                            comp respectively for monitored GLs only (please make sure to check respective g2s2’s
+                            separately)
+                        </blockquote>
+                    </a></li>
+
+                <li id="question"><a href="#">
+                        <span><b>Noon-AE promotions should also be matched for which MKPL comps?</b></span>
+                        <blockquote>
+                            Noon-AE promotions should also be matched for both the Noon channels such as
+                            Noon-AE-Now-MKPL & Noon-AE-MKPL.
+                        </blockquote>
+                    </a></li>
+                <li id="question"><a href="#">
+                        <span><b>Pickup In Store:</b></span>
+                        <blockquote>
+                            Promotions that let customers place orders online and visit a store to pick up the order
+                            will be matched by us by using corresponding rebate type (we will not use “Pickup_In_store”
+                            as rebate type). For example, if a promo is 10% off, pickup in store, we will select rebate
+                            type as Straight NBB (not Pickup_In_store).
+                        </blockquote>
+                    </a></li>
+                <li id="question"><a href="#">
+                        <span><b>Noon Competitors Maximum rebate in cart:</b></span>
+                        <blockquote>
+                            Noon competitor most of times has a Maximum Rebate value in cart, even though it is not
+                            mentioned anywhere in competitor website. Kindly validate and check for it always without
+                            miss. Please reach out to POCs if any confusion.
+                        </blockquote>
+                    </a></li>
+                <li id="question"><a href="#">
+                        <span><b>How to “include NYP” in any GL Level Vibe doesn't matter if it’s of match type Y or N
+                                ?</b></span>
+                        <blockquote>
+                            Do nothing. In simple words, If NYP should be included as per the SOP in any GL level vibe(Y
+                            or N type) world wide. Then please don't select NYP, by default it will be included.
+                        </blockquote>
+                    </a></li>
+                <li id="question"><a href="#">
+                        <span><b>Pre-Owned/Used/Refurbished/Reconditioned products</b></span>
+                        <blockquote>
+                            Please match all promotions on Pre-Owned/Used/Refurbished/Reconditioned products, if Amazon
+                            has selection for the same. Kindly check for a sample of 5 products if they carry an overlap
+                            in Amazon. Promos not having any overlapping SKUs with Amazon need not be matched.
+                        </blockquote>
+                    </a></li>
+                <li id="question"><a href="#">
+                        <span><b>Please match Private Brand only when private brands available on Amazon(Respective MKPL
+                                Amazon) website.</b></span>
+                    </a></li>
+                <li id="question"><a href="#">
+                        <span><b>For rebate types BXGY_BXFY$ and BXGY_BXGYZ$ we don't have rebate logic in
+                                ‘Vibe’</b></span>
+                    </a></li>
+                <li id="question"><a href="#">
+                        <span><b>IN BR MKPL - Match promotions which are applicable only on first XX orders where XX is
+                                any number above 500</b></span>
+                    </a></li>
+                <li id="question"><a href="#">
+                        <span><b>Carrefour-BR: Use zip-code 04543-000 to add products in cart and validate promotion if
+                                facing issues in promo validation.</b></span>
+                    </a></li>
+                <li id="question"><a href="#">
+                        <span><b>List of Map excluded GLs in CA MKPL:</b></span>
+                        <blockquote>
+                            "gl_baby_product", "gl_beauty", "gl_drugstore", "gl_furniture", "gl_grocery", "gl_home",
+                            "gl_kitchen", "gl_lawn_and_garden", "gl_luxury_beauty", "gl_personal_care_appliances",
+                            "gl_pet_products", "gl_wine"
+                        </blockquote>
+                    </a></li>
+                <li id="question"><a href="#">
+                        <span><b>DE loyality program:</b></span>
+                        <blockquote>
+                            <img src="demembers.PNG" alt="#">
+                        </blockquote>
+                    </a></li>
+                <li id="question"><a href="#">
+                        <span><b>Match Mytoys promotions by ignoring partner article exclusions</b></span>
+                    </a></li>
+                <li id="question"><a href="#">
+                        <span><b>Thalia - Non-price-fixed/linked calendar promos can be matched via ASIN level vibe on
+                                ASINs shared by Retail.</b></span>
+                    </a></li>
+                <li id="question"><a href="#">
+                        <span><b>Disclaimer for App only promotion in DE MKPL The promotion is valid app-only,
+                                requesting retail to review and approve to match SIC promotions, as
+                                appropriate.</b></span>
+                    </a></li>
+                <li id="question"><a href="#">
+                        <span><b>Asos (all MKPLs):</b></span>
+                        <blockquote>Asos competitor has Maximum pre-discount purchase value. Even if it’s mentioned in
+                            banner, but this value shouldn't be considered (Ignore the max. Order value mentioned in
+                            promo T&C) and Always check in Cart and consider same.
+                        </blockquote>
+                    </a></li>
+                <li id="question"><a href="#">
+                        <span><b>Do not match any promotions in Y type from competitor Alcampo-ES for any Consumable
+                                GLs.</b></span>
+                    </a></li>
+                <li id="question"><a href="#">
+                        <span><b>VAT promotions:</b></span>
+                        <blockquote>Please don't miss to capture any VAT promotions. if any captured, kindly reach out
+                            to POCs. Specially in Media Markt/Saturn(in DE) Comps.</blockquote>
+                    </a></li>
+                <li id="question"><a href="#">
+                        <span><b></b></span>
+                    </a></li>
+                <li id="question"><a href="#">
+                        <span><b>CDiscount Bounce back Vibe excluded brand List is shared(please refer Appendix 1 given
+                                in FR NBB SOP) . These brand should be excluded only in bounce back promotion matched
+                                via Vibe(not ST promos). Kindly ignore brand exclusions given in competitor site and
+                                exclude brands given below. For all other CDiscount promotions (beyond bounceback
+                                promos), these brands will not be excluded (effective 2/22/2022)</b></span>
+                    </a></li>
+                <li id="question"><a href="#">
+                        <span><b>Fnac-SpecialEditions is currently monitored for DVD and VG GLs, so the promotions
+                                surfaced for GLs DVD/VG promotion on Fnac (or any additional GL monitored for
+                                Fnac-SpecialEditions in the future), needs to be matched against both Fnac and
+                                Fnac-SpecialEditions as Fnac’s Special Edition products are mapped to
+                                Fnac-SpecialEditions competitor, and these products are not mapped to Fnac.</b></span>
+                    </a></li>
+                <li id="question"><a href="#">
+                        <span><b>Vibe conflict found error occurs whenever we try to launch vibe on one or more ASINs
+                                which is already part of any active Vibe against the same competitor. In simple words it
+                                is not allowing us to launch more than one Vibe on same ASIN(s).</b></span>
+                        <blockquote>So please launch the vibe only on ASINs which is not part of any existing vibe, take
+                            asin set from existing vibe.</blockquote>
+                    </a></li>
+                <li id="question"><a href="#">
+                        <span><b>Only for Fnac and Darty promo:</b></span>
+                        <blockquote>” X € offered every Y € ", ”10€ offered every 100€"
+                            Max. rebate cap is 15€ (Vibe and Site Training).
+                        </blockquote>
+                    </a></li>
+                <li id="question"><a href="#">
+                        <span><b>
+                                Easycoop-Bologna-IT is accessible through zip code 40126; Easycoop-IT is accessible
+                                through zip code 00184.</b></span>
+                    </a></li>
+                <li id="question"><a href="#">
+                        <span><b>In Wehkamp-NL competitor NBB promotions can be found in dropdown by just placing cursor
+                                on categories listed.</b></span>
+                    </a></li>
+                <li id="question"><a href="#">
+                        <span><b>TR NBB SOP Member only promotion: </b></span>
+                        <blockquote>only for Club members /Premium /Card promotions
+                            -Match all club members’ promotions for MediaMarkt-TR, Teknosa-TR and Vatan-TR.
+                            -Along with these we also have blanket approval from Retail to match Hepsiburada-TR Premium
+                            promotion, Carrefoursa-TR Card & Watsons-TR Card promotions.
+                            Above promotions may require some kind of authentication with local number when validating
+                            the promo genuineness in cart, or we may be unable to validate the promos without the card.
+                            However, we have approval from retail to match them if all other criteria are qualified,
+                            hence please check and match accordingly.
+                        </blockquote>
+                    </a></li>
+                <li id="question"><a href="#">
+                        <span><b>Match Smyths(UK MKPL) instore promos for Toys & Baby</b></span>
+                    </a></li>
+                <li id="question"><a href="#">
+                        <span><b>AO-UK: promotion bannered only on homepage header, below the category nodes will not be
+                                automatched</b></span>
+                    </a></li>
+                <li id="question"><a href="#">
+                        <span><b>UK MKPL- Exclude: Diaper category (12109001) from gl_drugstore</b></span>
+                    </a></li>
+                <li id="question"><a href="#">
+                        <span><b>Please exclude MAP ASINs for MKPL – US, GL – Pets if rebate type is Gift card/BXGY Gift
+                                card. (both Myra and Vibe)</b></span>
+                    </a></li>
+                <li id="question"><a href="#">
+                        <span><b>Target RedCard promotion don't match</b></span>
+                    </a></li>
+                <li id="question"><a href="#">
+                        <span><b>Target Competitor Behavior:</b></span>
+                        <blockquote>We see different promo strings present on the product page on entering the different
+                            zip code. Please use the following the zip codes to verify the promotion, 95122, 98108,
+                            94102. Please report if you come across any new behavior as such. Also clear your cache
+                            while monitoring.</blockquote>
+                    </a></li>
+                <li id="question"><a href="#">
+                        <span><b>Match Petco promotions in Vibe only (Pickup-Instore and Sitewide) </b></span>
+                        <blockquote>
+                            Exclude MAP <br> Brands exclusions (Comp. T&C + Given by retail: PetFusion, New World Pet
+                            Products, Midwest Homes for Pets, Ferplast, Petsafe). <br> Category exclusions from comp.
+                            T&C.
+                        </blockquote>
+                    </a></li>
+                <li id="question"><a href="#">
+                        <span><b>Bundle heterogeneous promotion in US MKPL: </b></span>
+                        <blockquote>Purchase a product and get discount on the second unique product or get it for free
+                            (BUNDLE_BXGY, BUNDLE_BXGYZPERCENT). Match Only ST LEVEL, Applicable if both Qualifier and
+                            Reward products have different promotion strings on their detail pages</blockquote>
+                    </a></li>
+                <li id="question"><a href="#">
+                        <span><b>CVS Competitor</b></span>
+                        <blockquote>
+                            In CVS competitor end date can be found in cart page <br> We need to launch two GL – level
+                            Vibes for CVS sitewide promotions due to MAP exceptions.
+                            Kindly reach out to POCs if any confusions.
+                        </blockquote>
+                    </a></li>
+                <li id="question"><a href="#">
+                        <span><b>Barnes and Noble Competitor</b></span>
+                        <blockquote>please note It is observed sometimes rebates are getting applied on Full price and
+                            not on sale price(BB Prices) in the cart. So be extra careful on this and always double
+                            check in cart and validate the Barnes and Noble promotions carefully.</blockquote>
+                    </a></li>
+                <li id="question"><a href="#">
+                        <span><b>It is observed that all Newegg coupon promotions always have end dates, please check
+                                for same in cart page during the promotion validation. Do consider this promo end date
+                                without fail to avoid end date-miss errors.</b></span>
+                    </a></li>
+                <li id="question"><a href="#">
+                        <span><b>Target circle promotions:</b></span>
+                        <blockquote>Target circle promotions to be matched with rebate type "Coupon" only when promotion
+                            is Straight NBB. <br>Target circle promotions to be matched with rebate type "BXGY" when
+                            promotions are BXGY, basket level and tiered. <br> Target circle promotions to be Target
+                            circle promotions to be matched with rebate type "Gift card" only when promotion is Gift
+                            card Target circle promotion.
+                        </blockquote>
+                    </a></li>
+                <li id="question"><a href="#">
+                        <span><b>Many Target circle promotions are 'Once per Customer' and we often miss to give
+                                'Maximum Restricted No of Usage' while matching , so kindly check Target circle
+                                promotion t&c carefully for OPC and reach out to POCs for any doubts. Below listed are
+                                few use cases:</b></span>
+                        <blockquote>“Category Coupon. Valid one-time use in store or online. Limit one coupon/offer per
+                            guest.” – <b>OPC</b> <br>“Category Coupon. Valid one-time use in store or online.” -
+                            <b>OPC</b>
+                            <br>
+                            "Category Coupon. Limit one coupon/offer per guest". – <b>OPC</b> <br>
+                            "Item Coupon. Valid one-time use in store or online." - <b>OPC</b> <br> "LIMIT ONE COUPON
+                            PER
+                            PURCHASE AND ONE COUPON PER CUSTOMER." – <b>OPC</b> <br> “Each Circle offer can be
+                            used for a maximum of 4 qualifying items per transaction, unless otherwise noted. Limit 1
+                            Circle account per transaction and 6 Circle transactions per day.” – <b>OPC.</b> <br>
+                            "Limit of one coupon per item. Consumer: Limit ONE coupon per purchase of products and
+                            quantities stated." - <b>NOT OPC.</b>
+                            <br>
+                            "Valid four time use in store or online" - <b>Maximum Restricted no of usage: 4.</b>
+                        </blockquote>
+                    </a></li>
+                <li id="question"><a href="#">
+                        <span><b>List of GLs where MAP should be excluded in GL level Vibe (Kindly check g2g2 of
+                                respective competitor):</b></span>
+                        <blockquote>"gl_automotive", "gl_biss", "gl_book", "gl_camera", "gl_drugstore", "gl_dvd",
+                            "gl_electronics", "gl_furniture", "gl_home", "gl_home_entertainment", "gl_home_improvement",
+                            "gl_kitchen", "gl_lawn_and_garden", "gl_luggage", "gl_major_appliances", "gl_music",
+                            "gl_musical_instruments", "gl_office_product", "gl_outdoors", "gl_pc", "gl_shoes",
+                            "gl_software", "gl_sports", "gl_toy", "gl_video_games", "gl_wireless", "gl_tires",
+                            "gl_tools"</blockquote>
+                    </a></li>
+                <li id="question"><a href="#">
+                        <span><b>Ocado "Maximum 18 promotional items per customer" , Morrisons "Maximum 20 promotional
+                                items per customer" & Newegg " In stock. Limit 2/3/4/5 per customer" promotions, we
+                                don't have to consider "Maximum Restricted No of Usage".</b></span>
+                        <blockquote></blockquote>
+                    </a></li>
+                <li id="question"><a href="#">
+                        <span><b>When two different 'ASIN level Vibe promotions'(ex. having different coupons if any) of
+                                same competitor if they have same- rebate value, rebate type, rebatesubtype and end
+                                date, we can launch one single Vibe for these two promotions by providing the
+                                details/Voucher URL in the format: Details 1/Details 2 and so on.</b></span>
+                        <blockquote></blockquote>
+                    </a></li>
+                <!-- <li id="question"><a href="#">
+                        <span><b></b></span>
+                        <blockquote></blockquote>
+                    </a></li> -->
+            </ul>
+        </div>
+    </div>
+    <button type="button" class="btn btn-success btn-lg" id="subQuery"
+        onclick="window.open( 'https://quip-amazon.com/qmwMAHjRTVW8/Submit-FAQ-Query', '_target' )"
+        style="margin: auto"> Please
+        submit your
+        Query</button>
+    <script language='javascript' src="faq.js"></script>
+</body>
+
+</html>
